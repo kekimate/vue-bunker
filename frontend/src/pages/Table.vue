@@ -153,16 +153,16 @@ export default {
                 this.errorObj.phoneErr.push('Telefonszám kitöltése kötelező');
             }
             else {
-                if (/*!this.orderObj.phone.startsWith('+36') ||*/ !this.orderObj.phone.startsWith('06')) {
+                if (!this.orderObj.phone.startsWith('+36') && !this.orderObj.phone.startsWith('06')) {
                     this.errorObj.phoneErr.push('Telefonszám csak +36-al vagy 06-al kezdődhet');
                 }
 
-                if (!/[0-9]{10}/.test(this.orderObj.phone) /*|| !/[+0-9]{10}/.test(this.orderObj.phone)*/) {
+                if (!/[+0-9]{10}/.test(this.orderObj.phone)) {
                     this.errorObj.phoneErr.push('Telefonszámban csak számok és + lehet');
                 }
 
-                if (this.orderObj.phone.length != 11 || this.orderObj.phone.length != 12) {
-                    this.errorObj.phoneErr.push('A telefonszám számai csak 11 vagy 12 lehet');
+                if (this.orderObj.phone.length != 11 && this.orderObj.phone.length != 12) {
+                    this.errorObj.phoneErr.push('A telefonszám hosszúsága nem megfelelő');
                 }
             }
 
@@ -224,7 +224,7 @@ export default {
                     this.errorObj.whenErr.push("Foglalni csak mostantól a következő hónapig lehet");
                 }
 
-                if (dateInput.getHours() < 17 || dateInput.getHours() > 1) {
+                if (dateInput.getHours() > 17 && dateInput.getHours() < 1) {
                     this.errorObj.whenErr.push("Csak 17:00 - 01:00-ig vagyunk nyitva");
                 }
             }
