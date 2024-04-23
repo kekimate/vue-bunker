@@ -76,7 +76,7 @@
                 </div>
                 <div class="input-box">
                     <iframe class="map"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.8938607918262!2d105.77118931493284!3d21.03693248599396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313454b6336e0f73%3A0x713103931378d09e!2zMiBExrDGoW5nIEtodcOqLCBNYWkgROG7i2NoLCBD4bqndSBHaeG6pXksIEjDoCBO4buZaQ!5e0!3m2!1svi!2s!4v1637511438358!5m2!1svi!2s"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2758.8758923485125!2d20.139285076756828!3d46.25269498048449!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47448876a46f662d%3A0xe5f9291ab7b038f5!2sSzeged%2C%20Gogol%20u.%2020%2C%206722!5e0!3m2!1shu!2shu!4v1713872909426!5m2!1shu!2shu"
                         loading="lazy"></iframe>
                 </div>  
             </div>
@@ -143,8 +143,8 @@ export default {
                 this.errorObj.nameErr.push("Név kitöltése kötelező");
             }
             else {
-                if (!/^[A-Za-z]+$/.test(this.orderObj.name.replace(/\s/g, ""))) {
-                    this.errorObj.nameErr.push('A névben csak betűk szerepelhetnek');
+                if (!/^(?:[A-Z][a-z]*)(?:[-\s][A-Z][a-z]*)+(?:\s+[A-Z][a-z]*)*$/.test(this.orderObj.name)) {
+                    this.errorObj.nameErr.push('Nem megfelelő formátum');
                 }
             }
 
@@ -228,8 +228,6 @@ export default {
                     this.errorObj.whenErr.push("Csak 17:00 - 01:00-ig vagyunk nyitva");
                 }
             }
-
-
         },
 
         async handleSubmit(e) {
