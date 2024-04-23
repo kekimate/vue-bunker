@@ -4,24 +4,23 @@
 
         <div class="heading">
             <span>Foglalás</span>
-            <h3>enjoy your moment</h3>
         </div>
 
         <div class="icons-container">
 
             <div class="icons ">
                 <img src="../assets/images/icon-1.png" alt="">
-                <h3>7:00am to 10:00pm</h3>
+                <h3>17:00 - 01:00</h3>
             </div>
 
             <div class="icons">
                 <img src="../assets/images/icon-2.png" alt="">
-                <h3>+84 123 123 123</h3>
+                <h3>+36 30 517 9177</h3>
             </div>
 
             <div class="icons">
                 <img src="../assets/images/icon-3.png" alt="">
-                <h3>02 Duong Khue, Cau Giay, Ha Noi, Viet Nam</h3>
+                <h3>Szeged, Gogol utca 20</h3>
             </div>
 
         </div>
@@ -31,12 +30,12 @@
 
             <div class="row">
                 <div class="input-box">
-                    <label for="uName">your name</label>
+                    <label for="uName">Teljes név</label>
                     <input type="text" name="uName" id="uName" v-model="orderObj.name">
                     <p v-if="errorObj.nameErr.length > 0">{{ errorObj.nameErr[0] }}</p>
                 </div>
                 <div class="input-box">
-                    <label for="uPhone">your phone number</label>
+                    <label for="uPhone">Telefonszám</label>
                     <input type="text" name="uPhone" id="uPhone" v-model="orderObj.phone">
                     <p v-if="errorObj.phoneErr.length > 0">{{ errorObj.phoneErr[0] }}</p>
                 </div>
@@ -44,12 +43,12 @@
 
             <div class="row">
                 <div class="input-box">
-                    <label for="oPeople">how many people</label>
+                    <label for="oPeople">Személyek száma</label>
                     <input type="number" name="oPeople" id="oPeople" v-model="orderObj.people">
                     <p v-if="errorObj.peopleErr.length > 0">{{ errorObj.peopleErr[0] }}</p>
                 </div>
                 <div class="input-box">
-                    <label for="oTables">how many tables</label>
+                    <label for="oTables">Asztalok száma</label>
                     <input type="number" name="oTables" id="oTables" v-model="orderObj.tables">
                     <p v-if="errorObj.tablesErr.length > 0">{{ errorObj.tablesErr[0] }}</p>
                 </div>
@@ -57,12 +56,12 @@
 
             <div class="row">
                 <div class="input-box">
-                    <label for="uCard">your membership card</label>
+                    <label for="uCard">Tagsági kártya száma</label>
                     <input type="text" name="uCard" id="uCard" v-model="orderObj.card">
                     <p v-if="errorObj.cardErr.length > 0">{{ errorObj.cardErr[0] }}</p>
                 </div>
                 <div class="input-box">
-                    <label for="oWhen">when</label>
+                    <label for="oWhen">Dátum</label>
                     <input type="datetime-local" name="oWhen" id="oWhen" v-model="orderObj.when"
                         @click="availableTime()">
                     <p v-if="errorObj.whenErr.length > 0">{{ errorObj.whenErr[0] }}</p>
@@ -71,18 +70,18 @@
 
             <div class="row">
                 <div class="input-box">
-                    <label for="uMessage">note</label>
-                    <textarea placeholder="your message, do you want to decorate your table?" name="uMessage"
+                    <label for="uMessage">Üzenet</label>
+                    <textarea placeholder="Üzenet, fontosabb információ" name="uMessage"
                         id="uMessage" cols="30" rows="10" v-model="orderObj.note"></textarea>
                 </div>
                 <div class="input-box">
                     <iframe class="map"
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.8938607918262!2d105.77118931493284!3d21.03693248599396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313454b6336e0f73%3A0x713103931378d09e!2zMiBExrDGoW5nIEtodcOqLCBNYWkgROG7i2NoLCBD4bqndSBHaeG6pXksIEjDoCBO4buZaQ!5e0!3m2!1svi!2s!4v1637511438358!5m2!1svi!2s"
                         loading="lazy"></iframe>
-                </div>
+                </div>  
             </div>
 
-            <input type="submit" value="Book Now" class="btn">
+            <input type="submit" value="Foglalás" class="btn">
         </form>
 
     </section>
@@ -141,74 +140,74 @@ export default {
 
             // Name validate
             if (!this.orderObj.name) {
-                this.errorObj.nameErr.push("Entering a name is required");
+                this.errorObj.nameErr.push("Név kitöltése kötelező");
             }
             else {
                 if (!/^[A-Za-z]+$/.test(this.orderObj.name.replace(/\s/g, ""))) {
-                    this.errorObj.nameErr.push('A name can only contain letters');
+                    this.errorObj.nameErr.push('A névben csak betűk szerepelhetnek');
                 }
             }
 
             // Phone validate
             if (!this.orderObj.phone) {
-                this.errorObj.phoneErr.push('Entering phone number is required');
+                this.errorObj.phoneErr.push('Telefonszám kitöltése kötelező');
             }
             else {
-                if (!this.orderObj.phone.startsWith('84')) {
-                    this.errorObj.phoneErr.push('Phone numbers must start with 84');
+                if (/*!this.orderObj.phone.startsWith('+36') ||*/ !this.orderObj.phone.startsWith('06')) {
+                    this.errorObj.phoneErr.push('Telefonszám csak +36-al vagy 06-al kezdődhet');
                 }
 
-                if (!/[0-9]{10}/.test(this.orderObj.phone)) {
-                    this.errorObj.phoneErr.push('Phone numbers can only contain numbers');
+                if (!/[0-9]{10}/.test(this.orderObj.phone) /*|| !/[+0-9]{10}/.test(this.orderObj.phone)*/) {
+                    this.errorObj.phoneErr.push('Telefonszámban csak számok és + lehet');
                 }
 
-                if (this.orderObj.phone.length != 11) {
-                    this.errorObj.phoneErr.push('Phone numbers must have exactly 11 digits');
+                if (this.orderObj.phone.length != 11 || this.orderObj.phone.length != 12) {
+                    this.errorObj.phoneErr.push('A telefonszám számai csak 11 vagy 12 lehet');
                 }
             }
 
             if (!this.orderObj.people) {
-                this.errorObj.peopleErr.push("Entering number of people is required");
+                this.errorObj.peopleErr.push("Személyek számának megadása kötelező");
             }
             else {
                 if (parseInt(this.orderObj.people) > 100) {
-                    this.errorObj.peopleErr.push("Each store can only serve 100 people at a time");
+                    this.errorObj.peopleErr.push("Egyszerre csak 100 személyt tudunk fogadni");
                 }
 
                 if (parseInt(this.orderObj.people) < 1) {
-                    this.errorObj.peopleErr.push("Number of people must be greater than or equal to 1");
+                    this.errorObj.peopleErr.push("Személyek száma csak 1 vagy több lehet");
                 }
             }
 
             if (!this.orderObj.tables) {
-                this.errorObj.tablesErr.push("Entering number of tables is required");
+                this.errorObj.tablesErr.push("Asztalok számának kitöltése kötelező");
             }
             else {
                 if (parseInt(this.orderObj.tables) > 50) {
-                    this.errorObj.tablesErr.push("Each store can only have maximum 50 tables");
+                    this.errorObj.tablesErr.push("Az asztalok száma nem haladhatja meg az 50-et");
                 }
 
                 if (parseInt(this.orderObj.tables) < 1) {
-                    this.errorObj.tablesErr.push("Number of tables must be greater than or equal to 1");
+                    this.errorObj.tablesErr.push("Az asztalok száma csak 1 vagy több lehet");
                 }
 
                 if (parseInt(this.orderObj.people) < parseInt(this.orderObj.tables)) {
-                    this.errorObj.tablesErr.push("The number of tables must be less than the number of people");
+                    this.errorObj.tablesErr.push("Az asztalok számának kevesebbnek kell lenni mint a személyek száma");
                 }
             }
 
             if (this.orderObj.card) {
                 if (!/[0-9]{10}/.test(this.orderObj.card)) {
-                    this.errorObj.cardErr.push('Card numbers can only contain numbers');
+                    this.errorObj.cardErr.push('A kártyaszámban csak szám lehet');
                 }
 
                 if (this.orderObj.card.length != 10) {
-                    this.errorObj.cardErr.push('Card number must have exactly 10 digits');
+                    this.errorObj.cardErr.push('A kártyaszám csak 10 szám lehet');
                 }
             }
 
             if (!this.orderObj.when) {
-                this.errorObj.whenErr.push("Entering when to serve is required");
+                this.errorObj.whenErr.push("Dátum bevitele kötelező");
             }
             else {
                 let minRange = document.getElementById("oWhen").getAttribute("min");
@@ -217,16 +216,16 @@ export default {
                 let dateMax = new Date(maxRange);
                 let dateInput = new Date(this.orderObj.when);
 
-                if (dateInput === "Invalid Date") {
-                    this.errorObj.whenErr.push("Invalid date input");
+                if (dateInput === "Nem valid dátum") {
+                    this.errorObj.whenErr.push("Nem valid dátum bevitel");
                 }
 
                 if (dateInput.getTime() < dateMin.getTime() || dateInput.getTime() > dateMax.getTime()) {
-                    this.errorObj.whenErr.push("Available reservation range is from now to next two months");
+                    this.errorObj.whenErr.push("Foglalni csak mostantól a következő hónapig lehet");
                 }
 
-                if (dateInput.getHours() < 7 || dateInput.getHours() > 22) {
-                    this.errorObj.whenErr.push("Store open from 7:00 AM to 10:00 PM everyday");
+                if (dateInput.getHours() < 17 || dateInput.getHours() > 1) {
+                    this.errorObj.whenErr.push("Csak 17:00 - 01:00-ig vagyunk nyitva");
                 }
             }
 
@@ -253,7 +252,7 @@ export default {
 
                 await axios.post("/booking", data);
 
-                this.$refs.alert.showAlert('success', 'Thank you! We will call you soon to confirm your order', 'Booking Successfully !')
+                this.$refs.alert.showAlert('success', 'Köszönjük! Nemsokára értesítjük a foglalásával kapcsolatban', 'Sikeres foglalás !')
                 document.getElementById("bookTableForm").reset();
             }
         }
@@ -269,6 +268,7 @@ export default {
 <style scoped>
 .order-section {
     padding: 2rem 9%;
+    background-image: url("../assets/images/bg.jpg");
 }
 
 .order-section .icons-container {
@@ -282,7 +282,7 @@ export default {
     border-radius: .5rem;
     padding: 2rem;
     text-align: center;
-    background: #f7f7f7;
+    background: rgb(85, 85, 85);
 }
 
 .order-section .icons-container .icons img {
@@ -291,12 +291,12 @@ export default {
 
 .order-section .icons-container .icons h3 {
     font-size: 2rem;
-    color: #130f40;
+    color: black;
     margin-top: .5rem;
 }
 
 .order-section form {
-    background: #f7f7f7;
+    background: rgb(85, 85, 85);
     padding: 2rem;
     border-radius: .5rem;
 }
@@ -308,11 +308,12 @@ export default {
 .order-section form .row .input-box {
     width: 49%;
     padding: 1.8rem 0;
+    color: black;
 }
 
 .order-section form .row label {
     font-size: 1.7rem;
-    color: #666;
+    color: black;
 }
 
 .order-section form .row p {
@@ -332,7 +333,8 @@ export default {
     border-radius: .5rem;
     font-size: 1.6rem;
     text-transform: none;
-    color: #130f40;
+    color: black;
+    background-color: lightgray;
 }
 
 .order-section form .row textarea {

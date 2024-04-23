@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-sm-4 col-12 filter-box">
                 <div class="row search-box">
-                    <input type="text" class="search-input" v-model="foodObj.name" placeholder="Search.." />
+                    <input type="text" class="search-input" v-model="foodObj.name" placeholder="Keresés.." />
                 </div>
 
                 <div class="row filter-drop-down">
