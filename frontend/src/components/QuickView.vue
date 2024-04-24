@@ -142,14 +142,20 @@ export default {
     width: 100%;
 }
 
+.quick-view .quick-view-inner .product-detail .content p{
+    color: black;
+}
+
 .quick-view .quick-view-inner .product-detail .content p span {
     margin-left: 5px;
     text-decoration: line-through;
     opacity: 0.5;
+    color: black;
 }
 
 .quick-view .quick-view-inner .product-detail .content div label {
     margin-right: 10px;
+    color: black;
 }
 
 .quick-view .quick-view-inner .product-detail .content .btn {
@@ -183,10 +189,12 @@ export default {
 
     .quick-view .quick-view-inner .product-detail .content .desc {
         font-size: 12px;
+        color: black;
     }
 
     .quick-view .quick-view-inner .product-detail .content .qty {
         font-size: 12px;
+        color: black;
     }
 
     .link-to-login {

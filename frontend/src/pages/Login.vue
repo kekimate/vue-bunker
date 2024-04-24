@@ -22,7 +22,7 @@
 
                 <div class="form-group">
                     <input type="submit" value="Bejelentkezés" class="btn">
-                    <p>Nincs fiókja? <router-link @click="scrollToTop()" to="/register">Készítsen egyet
+                    <p>Nincs fiókja? <router-link @click="scrollToTop()" to="/register">Fiók létrehozása
                         </router-link>
                     </p>
                 </div>

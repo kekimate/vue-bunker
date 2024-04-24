@@ -31,12 +31,12 @@
             <div class="row">
                 <div class="input-box">
                     <label for="uName">Teljes név</label>
-                    <input type="text" name="uName" id="uName" v-model="orderObj.name">
+                    <input type="text" name="uName" id="uName" placeholder="Teljes név" v-model="orderObj.name">
                     <p v-if="errorObj.nameErr.length > 0">{{ errorObj.nameErr[0] }}</p>
                 </div>
                 <div class="input-box">
                     <label for="uPhone">Telefonszám</label>
-                    <input type="text" name="uPhone" id="uPhone" v-model="orderObj.phone">
+                    <input type="text" name="uPhone" id="uPhone" placeholder="+36201234567" v-model="orderObj.phone">
                     <p v-if="errorObj.phoneErr.length > 0">{{ errorObj.phoneErr[0] }}</p>
                 </div>
             </div>
@@ -44,12 +44,12 @@
             <div class="row">
                 <div class="input-box">
                     <label for="oPeople">Személyek száma</label>
-                    <input type="number" name="oPeople" id="oPeople" v-model="orderObj.people">
+                    <input type="number" name="oPeople" id="oPeople" placeholder="2" v-model="orderObj.people">
                     <p v-if="errorObj.peopleErr.length > 0">{{ errorObj.peopleErr[0] }}</p>
                 </div>
                 <div class="input-box">
                     <label for="oTables">Asztalok száma</label>
-                    <input type="number" name="oTables" id="oTables" v-model="orderObj.tables">
+                    <input type="number" name="oTables" id="oTables" placeholder="1" v-model="orderObj.tables">
                     <p v-if="errorObj.tablesErr.length > 0">{{ errorObj.tablesErr[0] }}</p>
                 </div>
             </div>
@@ -57,7 +57,7 @@
             <div class="row">
                 <div class="input-box">
                     <label for="uCard">Tagsági kártya száma</label>
-                    <input type="text" name="uCard" id="uCard" v-model="orderObj.card">
+                    <input type="text" name="uCard" id="uCard" placeholder="0123456789" v-model="orderObj.card">
                     <p v-if="errorObj.cardErr.length > 0">{{ errorObj.cardErr[0] }}</p>
                 </div>
                 <div class="input-box">
@@ -143,7 +143,7 @@ export default {
                 this.errorObj.nameErr.push("Név kitöltése kötelező");
             }
             else {
-                if (!/^(?:[A-Z][a-z]*)(?:[-\s][A-Z][a-z]*)+(?:\s+[A-Z][a-z]*)*$/.test(this.orderObj.name)) {
+                if (!/^(?:[A-ZÁÉÍÓÖŐÚÜŰ][a-záéíóöőúüű]*)(?:[-\s][A-ZÁÉÍÓÖŐÚÜŰ][a-záéíóöőúüű]*)+(?:\s+[A-ZÁÉÍÓÖŐÚÜŰ][a-záéíóöőúüű]*)*$/.test(this.orderObj.name)) {
                     this.errorObj.nameErr.push('Nem megfelelő formátum');
                 }
             }
@@ -157,13 +157,13 @@ export default {
                     this.errorObj.phoneErr.push('Telefonszám csak +36-al vagy 06-al kezdődhet');
                 }
 
-                if (!/[+0-9]{10}/.test(this.orderObj.phone)) {
-                    this.errorObj.phoneErr.push('Telefonszámban csak számok és + lehet');
-                }
-
                 if (this.orderObj.phone.length != 11 && this.orderObj.phone.length != 12) {
                     this.errorObj.phoneErr.push('A telefonszám hosszúsága nem megfelelő');
                 }
+
+                if (!/[0-9]{11}/.test(this.orderObj.phone) && !/[+0-9]{12}/.test(this.orderObj.phone)) {
+                    this.errorObj.phoneErr.push('Telefonszámban csak számok és + lehet');
+                }    
             }
 
             if (!this.orderObj.people) {
@@ -307,6 +307,10 @@ export default {
     width: 49%;
     padding: 1.8rem 0;
     color: black;
+}
+
+.order-section form .row .input-box #oWhen{
+    color: #666;
 }
 
 .order-section form .row label {

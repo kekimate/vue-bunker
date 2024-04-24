@@ -16,7 +16,7 @@
                 </div>
 
                 <div class="form-group">
-                    <input type="submit" value="admin access" class="btn">
+                    <input type="submit" value="Admin belépés" class="btn">
                 </div>
             </form>
         </div>
@@ -32,7 +32,7 @@ export default {
     data() {
         return {
             adminObj: { pass: "" },
-            key: "25082002",
+            key: "admin",
             errors: [],
         }
     },

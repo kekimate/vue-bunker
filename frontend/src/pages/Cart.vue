@@ -2,8 +2,7 @@
     <div class="shopping-cart-section">
 
         <div class="heading">
-            <span>Shopping cart</span>
-            <h3>Good products, fast delivery</h3>
+            <span>Kosár</span>
         </div>
 
         <div class="container">
@@ -14,17 +13,16 @@
                             <div class="box-title item-total row">
                                 <h3>
                                     <p style="font-size: 15px;">{{ filterFoods.length.toString() }}
-                                        <span v-if="filterFoods.length < 2">item</span>
-                                        <span v-else>items</span>
-                                    </p>in your cart
+                                        <span>termék</span>
+                                    </p>a kosárban
                                 </h3>
                             </div>
 
                             <div v-if="!filterFoods.length">
                                 <div class="box-content row no-food">
                                     <div class="content">
-                                        <h2 style="color: #057835fa;">You do not have any items in your cart, go shop
-                                            now!</h2>
+                                        <h2 style="color: yellow;">Üres a kosár
+                                            </h2>
                                     </div>
                                     <div class="image">
                                         <img src="../assets/images/notfound.png" alt="" />
@@ -42,12 +40,12 @@
                                         <div class="desc col-sm-4">
                                             <h2 class="item-name">{{ f.food_name }}</h2>
                                             <div class="item-desc">
-                                                <b>Description</b>
+                                                <b>Leírás</b>
                                                 <p>{{ f.food_desc }}</p>
                                             </div>
                                             <button class="btn remove-btn" @click="removeBtn(index)"><i
-                                                    class="fa fa-trash"></i>Remove
-                                                item</button>
+                                                    class="fa fa-trash"></i>Törlés
+                                                </button>
                                         </div>
 
                                         <div class="item-price col-sm-1">
@@ -65,7 +63,7 @@
 
                                         <div class="item-qty col-sm-2 d-inline">
                                             <label for="iQuantity"
-                                                style="font-size: 12px; padding-right: 2px;">Quantity:</label>
+                                                style="font-size: 14px; padding-right: 2px;">Mennyiség:</label>
                                             <input type="number" id="iQuantity" class="form-control item-quantity"
                                                 :value="itemQuantity[index]" min="1" max="1000"
                                                 @change="onQtyChange($event, index)">
@@ -85,11 +83,11 @@
                         </div>
 
                         <div class="box-content row">
-                            <router-link to="/menu" class="btn shop-btn"><i class="fa fa-arrow-left"></i>Continue
-                                shopping</router-link>
+                            <router-link to="/menu" class="btn shop-btn"><i class="fa fa-arrow-left"></i>Tovább vásárolok
+                                </router-link>
                             <button class="btn check-out-btn" style="margin-left: 10px;"
                                 :disabled="filterFoods.length ? false : true" @click="checkOutBtn()"><i
-                                    class="fa fa fa-shopping-cart"></i>Checkout</button>
+                                    class="fa fa fa-shopping-cart"></i>Leadás</button>
                         </div>
                     </div>
 
@@ -97,43 +95,43 @@
                     <div class="col-md-3">
                         <div class="box">
                             <div class="box-title">
-                                <h3>Cart Summary</h3>
+                                <h3>Kosár összegzés</h3>
                             </div>
 
                             <div class="box-content">
-                                <span>Summary</span>
+                                <span>Összeg</span>
                                 <h3 class="font-bold total-first-price">${{ calculateSummaryPrice()[0] }}</h3>
 
-                                <span>Discount</span>
+                                <span>Leárazás</span>
                                 <h3 class="font-bold total-discount">${{ calculateSummaryPrice()[1] }}</h3>
 
-                                <span>Delivery fee</span>
+                                <span>Szállítási költség</span>
                                 <h3 class="font-bold total-delivery">${{ calculateSummaryPrice()[2] }}</h3>
 
                                 <hr />
 
-                                <span>Total</span>
+                                <span>Összesen</span>
                                 <h2 class="font-bold total-sale">${{ calculateSummaryPrice()[3] }}</h2>
 
                                 <div class="btn-group">
                                     <button class="btn check-out-btn" :disabled="filterFoods.length ? false : true"
                                         @click="checkOutBtn()"><i class="fa fa-shopping-cart"></i>
-                                        Checkout</button>
+                                        Leadás</button>
                                     <button class="btn cancel-btn" @click="cancelBtn()"
                                         :disabled="filterFoods.length ? false : true">
-                                        Cancel</button>
+                                        Törlés</button>
                                 </div>
                             </div>
                         </div>
 
                         <div class="box">
                             <div class="box-title">
-                                <h3>Support</h3>
+                                <h3>Kapcsolat</h3>
                             </div>
                             <div class="box-content text-center">
-                                <h3><i class="fa fa-phone"></i> +84 123 123 123</h3>
+                                <h3><i class="fa fa-phone"></i>+36 30 517 9177</h3>
                                 <span class="small">
-                                    Please contact with us if you have any questions. We are avalible 24h.
+                                    Lépjen kapcsolatba velünk ha van valamilyen kérdése
                                 </span>
                             </div>
                         </div>
@@ -256,12 +254,12 @@ export default {
 
 <style scoped>
 .shopping-cart-section {
-    background: #fff;
+    background-image: url("../assets/images/bg.jpg");
     padding: 2rem 9%;
 }
 
 .item-name {
-    color: #27ae60
+    color: white;
 }
 
 .cart-product-img {
@@ -269,7 +267,6 @@ export default {
     width: 100%;
     height: 125px;
     object-fit: cover;
-    background-color: #f7f7f7;
 
 }
 
@@ -287,43 +284,46 @@ export default {
 
 .box-title {
     background-color: inherit;
-    border-color: #e7eaec;
+    border-color: yellow;
     border-style: solid solid none;
     border-width: 3px 0 0;
     color: inherit;
     margin-bottom: 0;
     padding: 14px 15px 7px;
     min-height: 78px;
+    color: white;
 }
 
 .box-content {
     background-color: inherit;
     color: inherit;
     padding: 15px 20px 20px 20px;
-    border-color: #e7eaec;
+    border-color: yellow;
     border-image: none;
     border-style: solid solid none;
     border-width: 1px 0;
+    color: white;
+    font-size: 14px;
 
 }
 
 .item-desc b {
-    font-size: 12px;
+    font-size: 16px;
 }
 
 .item-desc p {
-    font-size: 10px;
+    font-size: 16px;
 }
 
 .sale-price,
 .first-price,
 .item-quantity {
-    font-size: 12px;
+    font-size: 16px;
 }
 
 .item-quantity {
-    width: 60px;
-    height: 15px;
+    width: 100px;
+    height: 30px;
 }
 
 .first-price {
@@ -331,9 +331,11 @@ export default {
 }
 
 .remove-btn {
-    font-size: 10px;
+    font-size: 14px;
     padding: 5px;
-    margin-top: 27px;
+    margin-top: 20px;
+    width: 100px;
+    height: 30px;
 }
 
 .remove-btn i {

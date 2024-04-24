@@ -135,8 +135,8 @@ export default {
                 this.errorObj.nameErr.push("Név bevitele kötelező");
             }
             else {
-                if (!/^(?:[A-Z][a-z]*)(?:[-\s][A-Z][a-z]*)+(?:\s+[A-Z][a-z]*)*$/.test(this.registerObj.name)) {
-                    this.errorObj.nameErr.push('Nem valid név');
+                if (!/^(?:[A-ZÁÉÍÓÖŐÚÜŰ][a-záéíóöőúüű]*)(?:[-\s][A-ZÁÉÍÓÖŐÚÜŰ][a-záéíóöőúüű]*)+(?:\s+[A-ZÁÉÍÓÖŐÚÜŰ][a-záéíóöőúüű]*)*$/.test(this.registerObj.name)) {
+                    this.errorObj.nameErr.push('A névben csak betűk lehetnek');
                 }
             }
 
@@ -156,11 +156,11 @@ export default {
             }
             else {
                 if (!/[!@#$%^&*]/.test(this.registerObj.pass)) {
-                    this.errorObj.passErr.push('A jelszónak muszály tartalmaznia egy speciális karaktert');
+                    this.errorObj.passErr.push('A jelszónak tartalmaznia kell egy speciális karaktert');
                 }
 
                 if (this.registerObj.pass.length < 8) {
-                    this.errorObj.passErr.push('A jelszónak 8 vagy több karakternek kell lennie');
+                    this.errorObj.passErr.push('A jelszónak 8 vagy annál több karakternek kell lennie');
                 }
             }
 
@@ -180,15 +180,15 @@ export default {
                 this.errorObj.phoneErr.push('Telefonszám bevitele kötelező');
             }
             else {
-                if (!this.orderObj.phone.startsWith('+36') && !this.orderObj.phone.startsWith('06')) {
+                if (!this.registerObj.phone.startsWith('+36') && !this.registerObj.phone.startsWith('06')) {
                     this.errorObj.phoneErr.push('Telefonszám csak +36-al vagy 06-al kezdődhet');
                 }
 
-                if (this.orderObj.phone.length != 11 && this.orderObj.phone.length != 12) {
+                if (this.registerObj.phone.length != 11 && this.registerObj.phone.length != 12) {
                     this.errorObj.phoneErr.push('A telefonszám hosszúsága nem megfelelő');
                 }
 
-                if (!/[+0-9]{10}/.test(this.orderObj.phone)) {
+                if (!/[0-9]{11}/.test(this.registerObj.phone) && !/[+0-9]{12}/.test(this.registerObj.phone)) {
                     this.errorObj.phoneErr.push('Telefonszámban csak számok és + lehet');
                 }
             }
@@ -259,7 +259,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    height: 100vh;
 }
 
 .register-container .register-form-container {
@@ -335,6 +335,10 @@ export default {
 .register-container .register-form-container form .form-group {
     margin: 0;
     color: black;
+}
+
+.register-container .register-form-container form .form-group .form-control{
+    color: #666;
 }
 
 .register-container .register-form-container form .form-group .error-mess {
