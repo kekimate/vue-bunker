@@ -2,49 +2,49 @@
     <div class="register-container">
         <div class="register-form-container">
             <form id="registerForm" @submit="handleSubmit" novalidate autocomplete="off">
-                <h3>Create your account</h3>
+                <h3>Regisztrálás</h3>
                 <div class="form-group">
-                    <label for="uName">Enter your name:
+                    <label for="uName">Teljes név:
                     </label>
-                    <input type="text" name="uName" placeholder="your full name" id="uName" class="form-control"
+                    <input type="text" name="uName" placeholder="Teljes név" id="uName" class="form-control"
                         v-model="registerObj.name" />
                     <p class="error-mess" v-if="errorObj.nameErr.length > 0">{{ errorObj.nameErr[0] }}</p>
                 </div>
 
                 <div class="form-group">
-                    <label for="uEmail">Enter your email:
+                    <label for="uEmail">Email:
                     </label>
-                    <input type="email" name="uEmail" placeholder="example@gmail.com" id="uEmail" class="form-control"
+                    <input type="email" name="uEmail" placeholder="email@gmail.com" id="uEmail" class="form-control"
                         v-model="registerObj.email" />
                     <p class="error-mess" v-if="errorObj.emailErr.length > 0">{{ errorObj.emailErr[0] }}</p>
                 </div>
 
                 <div class="form-group">
-                    <label for="uPass">Enter your password:
+                    <label for="uPass">Jelszó:
                     </label>
-                    <input type="password" name="uPass" placeholder="enter your password" id="uPass"
+                    <input type="password" name="uPass" placeholder="Jelszó" id="uPass"
                         class="form-control" v-model="registerObj.pass" />
                     <p class="error-mess" v-if="errorObj.passErr.length > 0">{{ errorObj.passErr[0] }}</p>
                 </div>
 
                 <div class="form-group">
-                    <label for="uPassConfirm">Check your password again:
+                    <label for="uPassConfirm">Jelszó újra:
                     </label>
-                    <input type="password" name="uPassConfirm" placeholder="enter your password again" id="uPassConfirm"
+                    <input type="password" name="uPassConfirm" placeholder="Jelszó újra" id="uPassConfirm"
                         class="form-control" v-model="registerObj.confirm" />
                     <p class="error-mess" v-if="errorObj.confirmErr.length > 0">{{ errorObj.confirmErr[0] }}</p>
                 </div>
 
                 <div class="form-group">
-                    <label for="uPhone">Enter your phone number:
+                    <label for="uPhone">Telefonszám:
                     </label>
-                    <input type="tel" name="uPhone" placeholder="enter your phone number" id="uPhone"
+                    <input type="tel" name="uPhone" placeholder="+36201234567" id="uPhone"
                         class="form-control" v-model="registerObj.phone" />
                     <p class="error-mess" v-if="errorObj.phoneErr.length > 0">{{ errorObj.phoneErr[0] }}</p>
                 </div>
 
                 <div class="form-group">
-                    <label for="uBirth">Enter your birthday:
+                    <label for="uBirth">Születési év:
                     </label>
                     <input type="date" name="uBirth" id="uBirth" class="form-control" @click="availableTime()"
                         v-model="registerObj.birth" />
@@ -52,20 +52,20 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="">Select your gender:
+                    <label for="">Nem:
                     </label>
                     <div class="form-group">
                         <input type="radio" name="gender" value="male" id="genderMale"
-                            v-model="registerObj.gender" /><span>Male</span>
+                            v-model="registerObj.gender" /><span>Férfi</span>
                         <input type="radio" name="gender" value="female" id="genderFemale"
-                            v-model="registerObj.gender" /><span>Female</span>
+                            v-model="registerObj.gender" /><span>Nő</span>
                     </div>
                     <p class="error-mess" v-if="errorObj.genderErr.length > 0">{{ errorObj.genderErr[0] }}</p>
                 </div>
 
                 <div class="form-group">
-                    <input type="submit" value="join us" class="btn" />
-                    <p>have an account? <router-link @click="scrollToTop()" to="/login">login</router-link>
+                    <input type="submit" value="Regisztrálás" class="btn" />
+                    <p>Van már fiókja? <router-link @click="scrollToTop()" to="/login">Bejelentkezés</router-link>
                     </p>
                 </div>
             </form>
@@ -132,70 +132,70 @@ export default {
 
             // Name validate
             if (!this.registerObj.name) {
-                this.errorObj.nameErr.push("Entering a name is required");
+                this.errorObj.nameErr.push("Név bevitele kötelező");
             }
             else {
-                if (!/^[A-Za-z]+$/.test(this.registerObj.name.replace(/\s/g, ""))) {
-                    this.errorObj.nameErr.push('A name can only contain letters');
+                if (!/^(?:[A-Z][a-z]*)(?:[-\s][A-Z][a-z]*)+(?:\s+[A-Z][a-z]*)*$/.test(this.registerObj.name)) {
+                    this.errorObj.nameErr.push('Nem valid név');
                 }
             }
 
             // Email validate
             if (!this.registerObj.email) {
-                this.errorObj.emailErr.push("Entering a email is required");
+                this.errorObj.emailErr.push("Email bevitele kötelező");
             }
             else {
                 if (!/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/.test(this.registerObj.email)) {
-                    this.errorObj.emailErr.push('Email must be valid');
+                    this.errorObj.emailErr.push('Nem valid email');
                 }
             }
 
             // Pass validate
             if (!this.registerObj.pass) {
-                this.errorObj.passErr.push('Password is required');
+                this.errorObj.passErr.push('Jelszó bevitele kötelező');
             }
             else {
                 if (!/[!@#$%^&*]/.test(this.registerObj.pass)) {
-                    this.errorObj.passErr.push('Password must contain at least 1 special character');
+                    this.errorObj.passErr.push('A jelszónak muszály tartalmaznia egy speciális karaktert');
                 }
 
                 if (this.registerObj.pass.length < 8) {
-                    this.errorObj.passErr.push('Password must be more than or equal 8 characters');
+                    this.errorObj.passErr.push('A jelszónak 8 vagy több karakternek kell lennie');
                 }
             }
 
             // Confirm Pass validate
             if (!this.registerObj.confirm) {
-                this.errorObj.confirmErr.push('Confirm password is required');
+                this.errorObj.confirmErr.push('Jelszó újra bevitele kötelező');
             }
             else {
                 if (this.registerObj.pass !== this.registerObj.confirm) {
-                    this.errorObj.confirmErr.push('Confirm password must be match with password');
+                    this.errorObj.confirmErr.push('Nem egyező jelszó');
                 }
             }
 
 
             // Phone validate
             if (!this.registerObj.phone) {
-                this.errorObj.phoneErr.push('Entering phone number is required');
+                this.errorObj.phoneErr.push('Telefonszám bevitele kötelező');
             }
             else {
-                if (!this.registerObj.phone.startsWith('84')) {
-                    this.errorObj.phoneErr.push('Phone numbers must start with 84');
+                if (!this.orderObj.phone.startsWith('+36') && !this.orderObj.phone.startsWith('06')) {
+                    this.errorObj.phoneErr.push('Telefonszám csak +36-al vagy 06-al kezdődhet');
                 }
 
-                if (this.registerObj.phone.length != 11) {
-                    this.errorObj.phoneErr.push('Phone numbers must have exactly 11 digits');
+                if (this.orderObj.phone.length != 11 && this.orderObj.phone.length != 12) {
+                    this.errorObj.phoneErr.push('A telefonszám hosszúsága nem megfelelő');
                 }
 
-                if (!/[0-9]{11}/.test(this.registerObj.phone)) {
-                    this.errorObj.phoneErr.push('Phone numbers can only contain numbers');
+                if (!/[+0-9]{10}/.test(this.orderObj.phone)) {
+                    this.errorObj.phoneErr.push('Telefonszámban csak számok és + lehet');
                 }
             }
 
             // Birth validate
             if (!this.registerObj.birth) {
-                this.errorObj.birthErr.push("Entering birthday is required");
+                this.errorObj.birthErr.push("Születésnap bevitele kötelező");
             }
             else {
                 let minRange = document.getElementById("uBirth").getAttribute("min");
@@ -204,18 +204,18 @@ export default {
                 let dateMax = new Date(maxRange);
                 let dateInput = new Date(this.registerObj.birth);
 
-                if (dateInput === "Invalid Date") {
-                    this.errorObj.birthErr.push("Invalid date input");
+                if (dateInput === "Nem valid dátum") {
+                    this.errorObj.birthErr.push("Nem valid dátum bevitele");
                 }
 
                 if (dateInput.getTime() < dateMin.getTime() || dateInput.getTime() > dateMax.getTime()) {
-                    this.errorObj.birthErr.push("Available birthday range is from pass 150 years to now");
+                    this.errorObj.birthErr.push("A születési évek csak 150-évvel ezelőttre érhetőek el");
                 }
             }
 
             // Gender validate
             if (!this.registerObj.gender) {
-                this.errorObj.genderErr.push("Please select a gender");
+                this.errorObj.genderErr.push("Kérem válasszon nemet");
             }
         },
 
@@ -228,7 +228,7 @@ export default {
                 e.preventDefault();
                 await this.getMatchUser(this.registerObj.email);
                 if (this.matchUser) {
-                    this.errorObj.emailErr.push("Account already exist")
+                    this.errorObj.emailErr.push("A fiók már létezik")
                 }
                 else {
                     let data = {
@@ -253,41 +253,45 @@ export default {
 <style scoped>
 .register-container {
     padding: 2rem 9%;
+    background-image: url("../assets/images/bg.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
 }
 
 .register-container .register-form-container {
-    background: #fff;
-
+    background: rgb(85, 85, 85);
+    max-width: 70rem;
+    width: 100%;
+    margin: auto;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    animation: fadeUp 0.4s linear;
+    overflow: hidden;
 }
 
 .register-container .register-form-container form {
     position: relative;
-    left: 50%;
-    transform: translate(-50%, 0%);
-    max-width: 70rem;
-    width: 100%;
-    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.05);
-    border: 0.1rem solid rgba(0, 0, 0, 0.2);
-    padding: 2rem;
-    border-radius: 0.5rem;
-    animation: fadeUp 0.4s linear;
 }
 
 .register-container .register-form-container form h3 {
     padding-bottom: 1rem;
     font-size: 2rem;
     text-transform: uppercase;
-    color: #130f40;
+    color: black;
     margin: 0;
 }
 
 .register-container .register-form-container form .form-control {
     margin: 0.7rem 0;
     border-radius: 0.5rem;
-    background: #f7f7f7;
+    background: lightgray;
     padding: 2rem 1.2rem;
     font-size: 1.6rem;
-    color: #130f40;
+    color: black;
     text-transform: none;
     width: 100%;
     border: none;
@@ -297,6 +301,7 @@ export default {
     font-size: 2rem;
     margin: 0;
     padding: 0;
+    color: black;
 }
 
 .register-container .register-form-container form span {
@@ -314,21 +319,22 @@ export default {
 .register-container .register-form-container form p {
     padding-top: 1rem;
     font-size: 1.5rem;
-    color: #666;
+    color: black;
     margin: 0;
 }
 
 .register-container .register-form-container form p a {
-    color: #27ae60;
+    color: yellow;
 }
 
 .register-container .register-form-container form p a:hover {
-    color: #130f40;
+    color: white;
     text-decoration: underline;
 }
 
 .register-container .register-form-container form .form-group {
     margin: 0;
+    color: black;
 }
 
 .register-container .register-form-container form .form-group .error-mess {

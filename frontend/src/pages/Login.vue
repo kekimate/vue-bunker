@@ -2,7 +2,7 @@
     <div class="login-container">
         <div class="login-form-container">
             <form id="loginForm" @submit="handleSubmit" novalidate autocomplete="off">
-                <h3>LOGIN</h3>
+                <h3>Bejelentkezés</h3>
 
                 <div v-if="errors.length" class="error-box">
                     <ul>
@@ -11,18 +11,18 @@
                 </div>
 
                 <div class="form-group">
-                    <input type="email" id="uEmail" name="uEmail" class="form-control" placeholder="enter your email"
+                    <input type="email" id="uEmail" name="uEmail" class="form-control" placeholder="Email"
                         v-model="loginObj.email" />
                 </div>
 
                 <div class="form-group">
                     <input type="password" id="uPass" name="uPass" class="form-control"
-                        placeholder="enter your password" v-model="loginObj.pass" />
+                        placeholder="Jelszó" v-model="loginObj.pass" />
                 </div>
 
                 <div class="form-group">
-                    <input type="submit" value="login now" class="btn">
-                    <p>don't have an account? <router-link @click="scrollToTop()" to="/register">create one
+                    <input type="submit" value="Bejelentkezés" class="btn">
+                    <p>Nincs fiókja? <router-link @click="scrollToTop()" to="/register">Készítsen egyet
                         </router-link>
                     </p>
                 </div>
@@ -62,17 +62,17 @@ export default {
             this.errors = [];
 
             if (!this.loginObj.email) {
-                this.errors.push("Entering a email is required");
+                this.errors.push("Email bevitele kötelező");
             }
             else {
                 if (!/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/.test(this.loginObj.email)) {
-                    this.errors.push('Email must be valid');
+                    this.errors.push('Nem valid email');
                 }
             }
 
 
             if (!this.loginObj.pass) {
-                this.errors.push('Password is required');
+                this.errors.push('Jelszó bevitele kötelező');
             }
 
             if (!this.errors.length == 0) {
@@ -82,7 +82,7 @@ export default {
                 e.preventDefault();
                 await this.getMatchUser(this.loginObj.email);
                 if (!this.matchUser) {
-                    this.errors.push("Incorrect email or password!")
+                    this.errors.push("Hibás email vagy jelszó!")
                 }
                 else {
                     if (this.matchUser.user_password === this.loginObj.pass) {
@@ -91,7 +91,7 @@ export default {
                         this.$router.push("/");
                     }
                     else {
-                        this.errors.push("Incorrect email or password!")
+                        this.errors.push("Hibás email vagy jelszó!")
                     }
                 }
             }
@@ -105,18 +105,17 @@ export default {
 <style scoped>
 .login-container {
     padding: 2rem 9%;
-}
-
-.login-container .login-form-container {
-    background-color: #fff;
+    background-image: url("../assets/images/bg.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 90vh;
 }
 
-.login-container .login-form-container form {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.login-container .login-form-container {
+    background-color: rgb(85, 85, 85);
     max-width: 40rem;
     width: 100%;
     box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.05);
@@ -126,22 +125,26 @@ export default {
     animation: fadeUp .4s linear;
 }
 
+.login-container .login-form-container form {
+    position: relative;
+}
+
 .login-container .login-form-container form h3 {
     padding-bottom: 1rem;
     font-size: 2rem;
     font-weight: bolder;
     text-transform: uppercase;
-    color: #130f40;
+    color: black;
     margin: 0;
 }
 
 .login-container .login-form-container form .form-control {
     margin: .7rem 0;
     border-radius: .5rem;
-    background: #f7f7f7;
+    background: lightgray;
     padding: 2rem 1.2rem;
     font-size: 1.6rem;
-    color: #130f40;
+    color: black;
     text-transform: none;
     width: 100%;
     border: none;
@@ -156,16 +159,16 @@ export default {
 .login-container .login-form-container form p {
     padding-top: 1rem;
     font-size: 1.5rem;
-    color: #666;
+    color: black;
     margin: 0;
 }
 
 .login-container .login-form-container form p a {
-    color: #27ae60;
+    color: yellow;
 }
 
 .login-container .login-form-container form p a:hover {
-    color: #130f40;
+    color: white;
     text-decoration: underline;
 }
 
