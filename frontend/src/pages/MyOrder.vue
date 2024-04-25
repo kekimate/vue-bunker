@@ -20,7 +20,7 @@
                 </div>
                 <div class="d-flex flex-wrap flex-sm-nowrap justify-content-between card-summary">
 
-                    <div class="w-100 text-center py-1 px-2"><span>Összeg:</span> ${{ b.bill_total }}</div>
+                    <div class="w-100 text-center py-1 px-2"><span>Összeg:</span> {{ b.bill_total }} Ft</div>
                     <div class="w-100 text-center py-1 px-2"><span>Cím:</span>{{ " " + b.bill_address }}
                     </div>
                     <div class="w-100 text-center py-1 px-2"><span>Telefonszám:</span>{{ " " + b.bill_phone }}
@@ -92,7 +92,7 @@ export default {
 
     data() {
         return {
-            avaiableStatus: ["cancel", "confirmed", "preparing", "checking", "delivering", "delivered"],
+            avaiableStatus: ["visszavonás", "elfogadva", "előkészítés", "ellenőrzés", "szállítás", "kiszállítva"],
             allBills: [],
 
             showOrderDetails: false,

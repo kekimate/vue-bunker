@@ -19,9 +19,9 @@
             </div>
 
             <div class="price">
-                <p>Leárazás: ${{ billMatch.bill_discount }}</p>
-                <p>Szállítási költség: ${{ billMatch.bill_delivery }}</p>
-                <p>Összesen: ${{ billMatch.bill_total }}</p>
+                <p>Leárazás: {{ billMatch.bill_discount }} Ft</p>
+                <p>Szállítási költség: {{ billMatch.bill_delivery }} Ft</p>
+                <p>Összesen: {{ billMatch.bill_total }} Ft</p>
             </div>
         </div>
     </div>

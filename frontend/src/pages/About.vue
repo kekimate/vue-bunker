@@ -62,7 +62,7 @@ export default {
 }
 
 .about-section .about-content .about-content-text {
-    font-size: 16px;
+    font-size: 18px;
     padding-left: 50px;
     color: white;
 }

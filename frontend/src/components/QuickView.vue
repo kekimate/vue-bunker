@@ -12,10 +12,10 @@
                 </div>
                 <div class="content">
                     <p class="desc">{{ f.food_desc }}</p>
-                    <p class="money">${{ parseFloat(f.food_price) - parseFloat(f.food_discount) }}<span
-                            v-if="parseFloat(f.food_discount) > 0">${{
+                    <p class="money">{{ parseFloat(f.food_price) - parseFloat(f.food_discount) }} Ft<span
+                            v-if="parseFloat(f.food_discount) > 0">{{
                                     parseFloat(f.food_price)
-                            }}</span></p>
+                            }} Ft</span></p>
                     <div class="qty">
                         <label for="qty">Mennyiség:</label>
                         <input type="number" name="qty" id="qty" value="1" min="1" max="1000"

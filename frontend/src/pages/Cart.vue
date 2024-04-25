@@ -49,14 +49,14 @@
                                         </div>
 
                                         <div class="item-price col-sm-1">
-                                            <span class="sale-price">${{ parseFloat(f.food_price) -
+                                            <span class="sale-price">{{ parseFloat(f.food_price) -
                                                     parseFloat(f.food_discount)
-                                            }}</span>
+                                            }} Ft</span>
                                             <p class="text-muted first-price"
                                                 v-if="parseFloat(f.food_discount) != 0.00">
-                                                ${{
+                                                {{
                                                         parseFloat(f.food_price)
-                                                }}
+                                                }} Ft
 
                                             </p>
                                         </div>
@@ -70,9 +70,9 @@
                                         </div>
 
                                         <div class="cal-total col-sm-2">
-                                            <h4 class="item-total">${{
+                                            <h4 class="item-total">{{
                                                     calculateItemPrice(index)
-                                            }}
+                                            }} Ft
                                             </h4>
                                         </div>
                                     </div>
@@ -100,18 +100,18 @@
 
                             <div class="box-content">
                                 <span>Összeg</span>
-                                <h3 class="font-bold total-first-price">${{ calculateSummaryPrice()[0] }}</h3>
+                                <h3 class="font-bold total-first-price">{{ calculateSummaryPrice()[0] }} Ft</h3>
 
                                 <span>Leárazás</span>
-                                <h3 class="font-bold total-discount">${{ calculateSummaryPrice()[1] }}</h3>
+                                <h3 class="font-bold total-discount">{{ calculateSummaryPrice()[1] }} Ft</h3>
 
                                 <span>Szállítási költség</span>
-                                <h3 class="font-bold total-delivery">${{ calculateSummaryPrice()[2] }}</h3>
+                                <h3 class="font-bold total-delivery">{{ calculateSummaryPrice()[2] }} Ft</h3>
 
                                 <hr />
 
                                 <span>Összesen</span>
-                                <h2 class="font-bold total-sale">${{ calculateSummaryPrice()[3] }}</h2>
+                                <h2 class="font-bold total-sale">{{ calculateSummaryPrice()[3] }} Ft</h2>
 
                                 <div class="btn-group">
                                     <button class="btn check-out-btn" :disabled="filterFoods.length ? false : true"

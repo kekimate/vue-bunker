@@ -4,7 +4,7 @@
             <form id="checkoutForm" @submit="handleSubmit" novalidate autocomplete="off">
                 <div class="checkout-heading">
                     <h3>Pár mozzanat a véglegesítéshez<span>Összeg</span></h3>
-                    <h3 v-if="user">{{ user.user_name }} rendelése<span>${{ calculateSummaryPrice()[3] }}</span></h3>
+                    <h3 v-if="user">{{ user.user_name }} rendelése<span>{{ calculateSummaryPrice()[3] }} Ft</span></h3>
                 </div>
 
                 <div class="form-group details-group">

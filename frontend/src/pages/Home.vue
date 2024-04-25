@@ -82,7 +82,7 @@
                 <img src="../assets/images/about-img.jpg" alt="">
             </div>
             <div class="content">
-                <span>Miért válassz minket?</span>
+                <span>Miért válasszon minket?</span>
                 <p>Food to customers is always guaranteed of the best quality. Our dishes are made by chef Quang (a 5
                     Michelin stars chef), promising to bring explosive, delicate, impressive flavors. Our delivery
                     service is very professional, customers can enjoy the same quality at the restaurant</p>
@@ -154,7 +154,7 @@ export default {
 }
 
 .home-main .content p {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     color: white;
     line-height: 2;
     padding: 1rem 0;
@@ -335,7 +335,7 @@ export default {
 .home-about .content p {
     padding: 1rem 0;
     line-height: 2;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     color: white;
 }
 
