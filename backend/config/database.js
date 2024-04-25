@@ -12,7 +12,7 @@ const db = mysql.createConnection({
 
 db.connect(error => {
   if (error) throw error;
-  console.log("Successfully connected to the database.");
+  console.log("Sikeres csatlakozás az adatbázishoz.");
 });
 
 export default db;
