@@ -1,7 +1,7 @@
 <template>
     <div class="order-details">
         <div class="order-details-inner">
-            <h2 class="d-flex justify-content-between">Order summary
+            <h2 class="d-flex justify-content-between">Rendelés összegzés
                 <slot></slot>
             </h2>
             <div class="d-flex flex-wrap h-50 flex-row" style="overflow-y: auto;">
@@ -19,9 +19,9 @@
             </div>
 
             <div class="price">
-                <p>Discount: ${{ billMatch.bill_discount }}</p>
-                <p>Delivery Fee: ${{ billMatch.bill_delivery }}</p>
-                <p>Total: ${{ billMatch.bill_total }}</p>
+                <p>Leárazás: ${{ billMatch.bill_discount }}</p>
+                <p>Szállítási költség: ${{ billMatch.bill_delivery }}</p>
+                <p>Összesen: ${{ billMatch.bill_total }}</p>
             </div>
         </div>
     </div>
@@ -106,7 +106,7 @@ export default {
 .order-details .order-details-inner {
     width: 60vw;
     height: 70vh;
-    background-color: #fff;
+    background-color: rgb(85, 85, 85);
     padding: 32px;
 }
 
@@ -114,7 +114,7 @@ export default {
 .order-details .order-details-inner h2 {
     margin: 0;
     font-size: 32px;
-    color: #27ae60;
+    color: yellow;
     margin-bottom: 20px;
 }
 
@@ -127,23 +127,25 @@ export default {
 
 .order-details .order-details-inner .product-detail .content {
     margin-top: 20px;
-    font-size: 12px;
+    font-size: 14px;
     width: 100%;
+    color: black;
 }
 
 .order-details .order-details-inner .product-detail .content p:first-of-type {
-    font-size: 16px;
-    color: #f38609;
+    font-size: 18px;
+    color: yellow;
 }
 
 .order-details .order-details-inner .product-detail .content p span {
-    font-size: 14px;
+    font-size: 16px;
     color: black;
 }
 
 .order-details .order-details-inner .price {
     margin-top: 30px;
     font-size: 16px;
+    color: black;
 }
 
 

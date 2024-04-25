@@ -81,7 +81,7 @@ export default {
                     item_qty: parseInt(this.qty) + parseInt(existItem.data[0].item_qty)
                 };
                 await axios.put("/cartItem/", data)
-                this.$refs.alert.showAlert('success', 'Thank you!', 'Add To Cart Successfully !')
+                this.$refs.alert.showAlert('success', 'Köszönjük!', 'Kosárba rakva!')
 
             } else {
                 let data = {
@@ -91,7 +91,7 @@ export default {
                 };
 
                 await axios.post("/cartItem/", data)
-                this.$refs.alert.showAlert('success', 'Thank you!', 'Add To Cart Successfully !')
+                this.$refs.alert.showAlert('success', 'Köszönjük!', 'Kosárba rakva!')
             }
         }
     },

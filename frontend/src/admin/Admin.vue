@@ -68,18 +68,17 @@ export default {
 <style scoped>
 .admin-container {
     padding: 2rem 9%;
+    background-image: url("../assets/images/bg.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(90vh - 200px);
 }
 
 .admin-container .admin-form-container {
-    background-color: #fff;
-    height: 100vh;
-}
-
-.admin-container .admin-form-container form {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    background-color: rgb(85, 85, 85);
     max-width: 40rem;
     width: 100%;
     box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.05);
@@ -89,22 +88,26 @@ export default {
     animation: fadeUp .4s linear;
 }
 
+.admin-container .admin-form-container form {
+    position: relative;
+}
+
 .admin-container .admin-form-container form h3 {
     padding-bottom: 1rem;
     font-size: 2rem;
     font-weight: bolder;
     text-transform: uppercase;
-    color: #130f40;
+    color: yellow;
     margin: 0;
 }
 
 .admin-container .admin-form-container form .form-control {
     margin: .7rem 0;
     border-radius: .5rem;
-    background: #f7f7f7;
+    background: lightgray;
     padding: 2rem 1.2rem;
     font-size: 1.6rem;
-    color: #130f40;
+    color: black;
     text-transform: none;
     width: 100%;
     border: none;
@@ -124,11 +127,11 @@ export default {
 }
 
 .admin-container .admin-form-container form p a {
-    color: #27ae60;
+    color: yellow;
 }
 
 .admin-container .admin-form-container form p a:hover {
-    color: #130f40;
+    color: black;
     text-decoration: underline;
 }
 

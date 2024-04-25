@@ -11,11 +11,11 @@
                 </div>
 
                 <div class="row filter-drop-down">
-                    <p @click="displayFilterDrop">Filter<span v-if="showDropDown">x</span><span v-else>v</span></p>
+                    <p @click="displayFilterDrop">Szűrés<span v-if="showDropDown">x</span><span v-else>v</span></p>
                 </div>
 
                 <div class="row filter-heading">
-                    <h1>Status</h1>
+                    <h1>Státusz</h1>
                 </div>
 
                 <div class="row filter-section">

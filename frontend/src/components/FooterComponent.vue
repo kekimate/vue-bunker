@@ -81,7 +81,6 @@ export default {
 <style scoped>
 /* footer */
 .footer {
-    background: #f7f7f7;
     padding: 2rem 9%;
     background-image: url("../assets/images/bg.jpg");
 }
