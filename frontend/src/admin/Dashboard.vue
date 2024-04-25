@@ -1,8 +1,8 @@
 <template>
     <div class="admin-container">
         <div class="d-flex justify-content-between">
-            <h1>Hello Admin!</h1>
-            <button class="btn" @click="handleLogout()">Logout</button>
+            <h1>Üdv Admin!</h1>
+            <button class="btn" @click="handleLogout()">Kijelentkezés</button>
         </div>
 
         <div class="table-responsive">
@@ -29,7 +29,7 @@
                         <td>{{ b.bill_address }}</td>
                         <td>{{ b.bill_when }}</td>
                         <td>{{ b.bill_paid }}</td>
-                        <td>${{ b.bill_total }}</td>
+                        <td>{{ b.bill_total }} Ft</td>
                         <td>{{ avaiableStatus[b.bill_status] }}</td>
                         <td>
                             <button v-if="b.bill_status < 5" class="action-btn" @click="nextStatusBtn(b.bill_id)">
@@ -37,12 +37,12 @@
                             </button>
 
                             <button v-if="b.bill_status == 1" class="cancel-btn" @click="cancelBtn(b.bill_id)">
-                                Cancel
+                                Visszavonás
                             </button>
 
                             <button v-else-if="b.bill_status == 5 && b.bill_paid == 'false'" class="paid-btn"
                                 @click="paidBtn(b.bill_id)">
-                                Paid
+                                Fizetve
                             </button>
 
                             <button v-else-if="b.bill_status == 5 && b.bill_paid == 'true'" class="action-btn"
@@ -66,7 +66,7 @@ export default {
 
     data() {
         return {
-            avaiableStatus: ["cancel", "confirmed", "preparing", "checking", "delivering", "delivered", "completed"],
+            avaiableStatus: ["visszavonás", "elfogadva", "előkészítés", "ellenőrzés", "szállítás", "kiszállítva", "befejezve"],
             allBills: [],
             showOrderDetails: false,
             sendId: undefined,
@@ -143,15 +143,20 @@ export default {
 </script>
 
 <style scoped>
+.admin-container .table-responsive .project-list thead tr th {
+    color: yellow;
+}
 .admin-container {
-    background-color: #fff;
+    background-image: url("../assets/images/bg.jpg");
     height: 100vh;
     padding: 2rem 9%;
     font-size: 16px;
+    color: yellow;
 }
 
 .project-list>tbody>tr>td {
     padding: 12px 8px;
+    color: yellow;
 }
 
 .project-list>tbody>tr>td .avatar {
@@ -173,8 +178,9 @@ export default {
 }
 
 .action-btn {
-    background-color: #0da9ef;
+    background-color: yellow;
     margin-right: 10px;
+    color: black;
 }
 
 .cancel-btn,
@@ -182,7 +188,12 @@ export default {
     background-color: red;
 }
 
+.cancel-btn:hover {
+    background-color: white;
+    color: black;
+}
+
 .action-btn:hover {
-    background-color: #27ae60;
+    background-color: white;
 }
 </style>
