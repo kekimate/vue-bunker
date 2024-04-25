@@ -111,7 +111,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    min-height: calc(90vh - 200px);
 }
 
 .login-container .login-form-container {

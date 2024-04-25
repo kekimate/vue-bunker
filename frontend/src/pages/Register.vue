@@ -259,7 +259,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: calc(100vh - 200px);
 }
 
 .register-container .register-form-container {
