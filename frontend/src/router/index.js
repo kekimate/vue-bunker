@@ -83,7 +83,6 @@ const routes = [
   {
     path: '/:pathMatch(.*)*',
     component: Home,
-    // https://stackoverflow.com/questions/68504803/how-can-i-make-a-catch-all-other-route-in-vue-router-also-catch-the-url-when-p
   },
 ];
 

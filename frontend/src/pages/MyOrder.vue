@@ -4,26 +4,26 @@
             <div v-for="b in filterBills.slice().reverse()" class="card" :key="b.bill_id">
                 <div class="card-head d-flex flex-wrap flex-sm-nowrap justify-content-between">
                     <div>
-                        <span>Order No - </span>
+                        <span>Rendelés - </span>
                         <span>{{ b.bill_id }}</span>
                     </div>
-                    <button @click="sendBillId(b.bill_id)">show order details</button>
+                    <button @click="sendBillId(b.bill_id)">Rendelés adatai</button>
                 </div>
 
                 <div class="d-flex flex-wrap flex-sm-nowrap justify-content-between card-summary">
-                    <div class="w-100 text-center py-1 px-2"><span>Paid:</span>{{ " " + b.bill_paid }}
+                    <div class="w-100 text-center py-1 px-2"><span>Fizetve:</span>{{ " " + b.bill_paid }}
                     </div>
-                    <div class="w-100 text-center py-1 px-2"><span>Status:</span>{{ " " + avaiableStatus[b.bill_status]
+                    <div class="w-100 text-center py-1 px-2"><span>Állapot:</span>{{ " " + avaiableStatus[b.bill_status]
                     }}
                     </div>
-                    <div class="w-100 text-center py-1 px-2"><span>When:</span> {{ b.bill_when }}</div>
+                    <div class="w-100 text-center py-1 px-2"><span>Időpont:</span> {{ b.bill_when }}</div>
                 </div>
                 <div class="d-flex flex-wrap flex-sm-nowrap justify-content-between card-summary">
 
-                    <div class="w-100 text-center py-1 px-2"><span>Total:</span> ${{ b.bill_total }}</div>
-                    <div class="w-100 text-center py-1 px-2"><span>Address:</span>{{ " " + b.bill_address }}
+                    <div class="w-100 text-center py-1 px-2"><span>Összeg:</span> ${{ b.bill_total }}</div>
+                    <div class="w-100 text-center py-1 px-2"><span>Cím:</span>{{ " " + b.bill_address }}
                     </div>
-                    <div class="w-100 text-center py-1 px-2"><span>Phone:</span>{{ " " + b.bill_phone }}
+                    <div class="w-100 text-center py-1 px-2"><span>Telefonszám:</span>{{ " " + b.bill_phone }}
                     </div>
                 </div>
 
@@ -33,31 +33,31 @@
                             <div class="step-icon-wrap">
                                 <div class="step-icon"><i class="fa-solid fa-utensils"></i></div>
                             </div>
-                            <h4 class="step-title">Confirmed</h4>
+                            <h4 class="step-title">Elfogadva</h4>
                         </div>
                         <div class="step" :class="b.bill_status >= 2 ? 'completed' : ''">
                             <div class="step-icon-wrap">
                                 <div class="step-icon"><i class="fa-solid fa-fire-burner"></i></div>
                             </div>
-                            <h4 class="step-title">Preparing</h4>
+                            <h4 class="step-title">Előkészítés</h4>
                         </div>
                         <div class="step" :class="b.bill_status >= 3 ? 'completed' : ''">
                             <div class="step-icon-wrap">
                                 <div class="step-icon"><i class="fa-solid fa-list-check"></i></div>
                             </div>
-                            <h4 class="step-title">Checking</h4>
+                            <h4 class="step-title">Ellenőrzés</h4>
                         </div>
                         <div class="step" :class="b.bill_status >= 4 ? 'completed' : ''">
                             <div class="step-icon-wrap">
                                 <div class="step-icon"><i class="fa-solid fa-route"></i></div>
                             </div>
-                            <h4 class="step-title">Delivering</h4>
+                            <h4 class="step-title">Szállítás</h4>
                         </div>
                         <div class="step" :class="b.bill_status >= 5 ? 'completed' : ''">
                             <div class="step-icon-wrap">
                                 <div class="step-icon"><i class="fa-solid fa-house"></i></div>
                             </div>
-                            <h4 class="step-title">Delivered</h4>
+                            <h4 class="step-title">Kisszállítva</h4>
                         </div>
                     </div>
                 </div>
@@ -67,12 +67,12 @@
 
         <div v-else class="box-content row no-food">
             <div class="content">
-                <h2 style="color: #057835fa;">You do not have any orders yet</h2>
+                <h2 style="color: yellow;">Még nincs rendelés</h2>
             </div>
             <div>
                 <img src="../assets/images/no-orders.png" alt="" />
             </div>
-            <router-link class="btn" to="/menu">Order now!</router-link>
+            <router-link class="btn" to="/menu">Rendeljen most!</router-link>
         </div>
 
         <OrderDetails v-if="showOrderDetails" :bill="sendId">
@@ -151,7 +151,7 @@ export default {
 <style scoped>
 .my-order-container {
     padding: 2rem 9%;
-    background: #fff;
+    background-image: url("../assets/images/bg.jpg");
     height: 100%;
 }
 
@@ -160,7 +160,7 @@ export default {
 }
 
 .my-order-cards {
-    margin-bottom: 2rem;
+    margin-bottom: 8vh;
 }
 
 .card {
@@ -169,9 +169,9 @@ export default {
 
 .card-head {
     padding: 12px 0px;
-    color: white;
+    color: black;
     font-size: 16px;
-    background: #27ae60;
+    background: yellow;
 
 }
 
@@ -181,18 +181,18 @@ export default {
 
 .card-head button {
     background-color: inherit;
-    color: white;
+    color: black;
     margin-right: 20px;
     font-weight: 500;
 }
 
 .card-head button:hover {
-    color: #f38609;
+    color: white;
 }
 
 .card-summary {
     padding: 12px 10px;
-    background: #eee;
+    background: lightgray;
     font-size: 14px;
 }
 
@@ -219,7 +219,7 @@ export default {
     width: 50%;
     height: 3px;
     margin-top: -1px;
-    background-color: #e1e7ec;
+    background-color: #dadada;
     content: '';
     z-index: 1
 }
@@ -264,13 +264,13 @@ export default {
 
 .steps .step.completed .step-icon-wrap::before,
 .steps .step.completed .step-icon-wrap::after {
-    background-color: #0da9ef
+    background-color: yellow
 }
 
 .steps .step.completed .step-icon {
-    border-color: #0da9ef;
-    background-color: #0da9ef;
-    color: #fff
+    border-color: yellow;
+    background-color: yellow;
+    color: black
 }
 
 .no-food {
