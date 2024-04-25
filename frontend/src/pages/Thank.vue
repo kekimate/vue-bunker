@@ -2,29 +2,26 @@
     <div class="thank-container">
         <h1>
             <p>
-                <span>t</span>
-                <span>h</span>
-                <span>a</span>
+                <span>K</span>
+                <span>ö</span>
+                <span>s</span>
+                <span>z</span>
+                <span>ö</span>
                 <span>n</span>
+                <span>j</span>
+                <span>ü</span>
                 <span>k</span>
             </p>
 
-            <p>
-                <span>y</span>
-                <span>o</span>
-                <span>u</span>
-            </p>
+
         </h1>
 
         <div class="thank-letter">
-            <p v-none>Thank you for giving us your trust!</p>
+            <p v-none>Köszönjük a bizalmát!</p>
             <p v-none>
-                We have just confirmed you received your order, and hope you are enjoying it.
-                Every
-                item is handmade by our team, with care to the details, so we can always provide you with the best
-                experience.
+                Megkaptuk a rendelését, igyekszünk minél hamarabb elkészíteni.
             </p>
-            <router-link class="btn" to="/menu">Continue Shopping</router-link>
+            <router-link class="btn" to="/menu">Vásárlás folytatása</router-link>
         </div>
     </div>
 </template>
@@ -49,8 +46,8 @@ const vNone = {
 
 .thank-container {
     padding: 2rem 9%;
-    background: #fff;
     height: 90vh;
+    background-image: url("../assets/images/bg.jpg");
 }
 
 
@@ -65,14 +62,14 @@ const vNone = {
 
 .thank-container h1 p span {
     position: relative;
-    color: #27ae60 !important;
+    color: yellow !important;
     top: 20px;
     display: inline-block;
     -webkit-animation: bounce 0.3s ease infinite alternate;
     font-size: 80px;
     color: #fff;
-    text-shadow: 0 1px 0 #20884b, 0 2px 0 #20884b, 0 3px 0 #20884b, 0 4px 0 #20884b,
-        0 5px 0 #20884b, 0 6px 0 transparent, 0 7px 0 transparent, 0 8px 0 transparent,
+    text-shadow: 0 1px 0 white, 0 2px 0 white, 0 3px 0 white, 0 4px 0 white,
+        0 5px 0 white, 0 6px 0 transparent, 0 7px 0 transparent, 0 8px 0 transparent,
         0 9px 0 transparent, 0 10px 10px rgba(0, 0, 0, 0.4);
 }
 
@@ -99,6 +96,7 @@ const vNone = {
     width: 40vw;
     margin: 0 auto;
     text-align: center;
+    color: white;
 }
 
 .thank-letter a {
@@ -108,8 +106,8 @@ const vNone = {
 @-webkit-keyframes bounce {
     100% {
         top: -20px;
-        text-shadow: 0 1px 0 #20884b, 0 2px 0 #20884b, 0 3px 0 #20884b, 0 4px 0 #20884b,
-            0 5px 0 #20884b, 0 6px 0 #20884b, 0 7px 0 #20884b, 0 8px 0 #20884b, 0 9px 0 #20884b,
+        text-shadow: 0 1px 0 white, 0 2px 0 white, 0 3px 0 white, 0 4px 0 white,
+            0 5px 0 white, 0 6px 0 white, 0 7px 0 white, 0 8px 0 white, 0 9px 0 white,
             0 50px 25px rgba(0, 0, 0, 0.2);
     }
 }

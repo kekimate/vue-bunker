@@ -338,7 +338,7 @@ export default {
 }
 
 .register-container .register-form-container form .form-group .form-control{
-    color: #666;
+    color: black;
 }
 
 .register-container .register-form-container form .form-group .error-mess {
