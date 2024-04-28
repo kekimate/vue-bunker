@@ -4,12 +4,12 @@
 
             <div class="box">
                 <h3>Menü</h3>
-                <router-link @click="scrollToTop()" to="/menu/"><i class="fas fa-arrow-right"></i> taco</router-link>
-                <router-link @click="scrollToTop()" to="/menu"><i class="fas fa-arrow-right"></i> burrito</router-link>
-                <router-link @click="scrollToTop()" to="/menu"><i class="fas fa-arrow-right"></i> nachos</router-link>
-                <router-link @click="scrollToTop()" to="/menu"><i class="fas fa-arrow-right"></i> side food</router-link>
-                <router-link @click="scrollToTop()" to="/menu"><i class="fas fa-arrow-right"></i> dessert</router-link>
-                <router-link @click="scrollToTop()" to="/menu"><i class="fas fa-arrow-right"></i> drink</router-link>
+                <router-link @click="scrollToTop()" to="/menu/"><i class="fas fa-arrow-right"></i> Pizza</router-link>
+                <router-link @click="scrollToTop()" to="/menu"><i class="fas fa-arrow-right"></i> Gyros</router-link>
+                <router-link @click="scrollToTop()" to="/menu"><i class="fas fa-arrow-right"></i> Hamburger</router-link>
+                <router-link @click="scrollToTop()" to="/menu"><i class="fas fa-arrow-right"></i> Tortilla</router-link>
+                <router-link @click="scrollToTop()" to="/menu"><i class="fas fa-arrow-right"></i> Desszert</router-link>
+                <router-link @click="scrollToTop()" to="/menu"><i class="fas fa-arrow-right"></i> Ital</router-link>
             </div>
 
             <div class="box">

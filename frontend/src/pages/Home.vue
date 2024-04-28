@@ -14,33 +14,33 @@
 
         <div class="home-category">
             <router-link @click="scrollToTop()" to="/menu" class="box">
-                <img src="../assets/images/taco-img.png" alt="">
-                <h3>taco</h3>
+                <img src="../assets/images/pizza-img.png" alt="">
+                <h3>Pizza</h3>
             </router-link>
 
             <router-link @click="scrollToTop()" to="/menu" class="box">
-                <img src="../assets/images/burrito-img.png" alt="">
-                <h3>burrito</h3>
+                <img src="../assets/images/gyros-img.png" alt="">
+                <h3>Gyros</h3>
             </router-link>
 
             <router-link @click="scrollToTop()" to="/menu" class="box">
-                <img src="../assets/images/nachos-img.png" alt="">
-                <h3>nachos</h3>
+                <img src="../assets/images/hamburger-img.png" alt="">
+                <h3>Hamburger</h3>
             </router-link>
 
             <router-link @click="scrollToTop()" to="/menu" class="box">
-                <img src="../assets/images/salad-img.png" alt="">
-                <h3>sides</h3>
+                <img src="../assets/images/tortilla-img.png" alt="">
+                <h3>Tortilla</h3>
             </router-link>
 
             <router-link @click="scrollToTop()" to="/menu" class="box">
                 <img src="../assets/images/dessert-img.png" alt="">
-                <h3>dessert</h3>
+                <h3>Desszert</h3>
             </router-link>
 
             <router-link @click="scrollToTop()" to="/menu" class="box">
-                <img src="../assets/images/coca-img.png" alt="">
-                <h3>drink</h3>
+                <img src="../assets/images/drink-img.png" alt="">
+                <h3>Ital</h3>
             </router-link>
         </div>
 
