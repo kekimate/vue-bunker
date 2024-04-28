@@ -23,7 +23,7 @@
                         <li>
                             <input type="button" name="cbStatus" id="bsStatus" value="Best Seller" hidden
                                 @click="filterStatusBtn($event)" />
-                            <label for="bsStatus" class="d-flex justify-content-between">Best Seller
+                            <label for="bsStatus" class="d-flex justify-content-between">Legkeresettebbek
                                 <button class="unselect-btn" @click="unselectStatusBtn($event)"
                                     value="Best Seller">X</button></label>
                         </li>
@@ -32,7 +32,7 @@
                         <li>
                             <input type="button" name="cbStatus" id="ooStatus" value="Online Only" hidden
                                 @click="filterStatusBtn($event)" />
-                            <label for="ooStatus" class="d-flex justify-content-between">Online Only <button
+                            <label for="ooStatus" class="d-flex justify-content-between">Csak online<button
                                     class="unselect-btn" @click="unselectStatusBtn($event)"
                                     value="Online Only">X</button></label>
                         </li>
@@ -41,7 +41,7 @@
                         <li>
                             <input type="button" name="cbStatus" id="soStatus" value="Sale Off" hidden
                                 @click="filterStatusBtn($event)" />
-                            <label for="soStatus" class="d-flex justify-content-between">Sale Off <button
+                            <label for="soStatus" class="d-flex justify-content-between">Akció <button
                                     class="unselect-btn" @click="unselectStatusBtn($event)"
                                     value="Sale Off">X</button></label>
                         </li>
@@ -50,7 +50,7 @@
                         <li>
                             <input type="button" name="cbStatus" id="sdStatus" value="Seasonal Dishes" hidden
                                 @click="filterStatusBtn($event)" />
-                            <label for="sdStatus" class="d-flex justify-content-between">Seasonal Dishes <button
+                            <label for="sdStatus" class="d-flex justify-content-between">Évszakosak <button
                                     class="unselect-btn" @click="unselectStatusBtn($event)"
                                     value="Seasonal Dishes">X</button></label>
                         </li>
@@ -59,7 +59,7 @@
                         <li>
                             <input type="button" name="cbStatus" id="ndStatus" value="New Dishes" hidden
                                 @click="filterStatusBtn($event)" />
-                            <label for="ndStatus" class="d-flex justify-content-between">New Dishes <button
+                            <label for="ndStatus" class="d-flex justify-content-between">Újdonságok <button
                                     class="unselect-btn" @click="unselectStatusBtn($event)"
                                     value="New Dishes">X</button></label>
                         </li>
@@ -69,7 +69,7 @@
                 </div>
 
                 <div class="row filter-heading">
-                    <h1>Price</h1>
+                    <h1>Ár</h1>
                 </div>
 
                 <div class="row filter-section">
@@ -115,7 +115,7 @@
 
 
                 <div class="row filter-heading">
-                    <h1>Type</h1>
+                    <h1>Típus</h1>
                 </div>
 
                 <div class="row filter-section">
@@ -123,14 +123,14 @@
                         <li>
                             <input type="button" name="rType" id="mType" value="meat" hidden
                                 @click="filterTypeBtn($event)" />
-                            <label for="mType" class="d-flex justify-content-between">meat<button class="unselect-btn"
+                            <label for="mType" class="d-flex justify-content-between">Húsos<button class="unselect-btn"
                                     @click="unselectTypeBtn($event)">X</button></label>
                         </li>
 
                         <li>
                             <input type="button" name="rType" id="vType" value="vegan" hidden
                                 @click="filterTypeBtn($event)" />
-                            <label for="vType" class="d-flex justify-content-between">vegan<button class="unselect-btn"
+                            <label for="vType" class="d-flex justify-content-between">Vegán<button class="unselect-btn"
                                     @click="unselectTypeBtn($event)">X</button></label>
                         </li>
 
@@ -161,7 +161,7 @@
                 <div class="row box-container">
                     <div v-for="(f, index) in currentPageItems" :key="index">
                         <div class="box">
-                            <a href="" class="fas fa-heart"></a>
+                            <!----<a href="" class="fas fa-heart"></a>-->
                             <div class="image">
                                 <img :src="require(`../assets/images/${f.food_src}`)" alt="" />
                             </div>

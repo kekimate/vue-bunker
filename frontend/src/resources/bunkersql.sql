@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2024. Ápr 28. 14:50
+-- Létrehozás ideje: 2024. Ápr 28. 22:12
 -- Kiszolgáló verziója: 10.4.32-MariaDB
 -- PHP verzió: 8.2.12
 
@@ -82,6 +82,13 @@ CREATE TABLE `cart` (
   `item_qty` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
+--
+-- A tábla adatainak kiíratása `cart`
+--
+
+INSERT INTO `cart` (`user_id`, `food_id`, `item_qty`) VALUES
+(1, 1, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -107,48 +114,49 @@ CREATE TABLE `food` (
 --
 
 INSERT INTO `food` (`food_id`, `food_name`, `food_star`, `food_vote`, `food_price`, `food_discount`, `food_desc`, `food_status`, `food_type`, `food_category`, `food_src`) VALUES
-(1, 'carne asada tacos', '4.5', '999', '12.00', '0.00', '03 pieces per serving', 'best seller', 'meat', 'pizza', 'pizza/taco-1.png'),
-(2, 'shrimp tacos', '4.5', '999', '15.00', '3.00', '03 pieces per serving', 'best seller', 'meat', 'pizza', 'pizza/taco-2.png'),
-(3, 'barbacoa tacos', '4.5', '500', '12.00', '0.00', '03 pieces per serving', 'best seller', 'meat', 'pizza', 'pizza/taco-3.png'),
-(4, 'tacos al pastor', '4.5', '999', '13.00', '2.00', '03 pieces per serving', 'best seller', 'meat', 'pizza', 'pizza/taco-4.png'),
-(5, 'tinga tacos', '4', '500', '11.00', '0.00', '03 pieces per serving', 'normal', 'meat', 'pizza', 'pizza/taco-5.png'),
-(6, 'campechanos tacos', '4', '500', '11.00', '1.00', '03 pieces per serving', 'new dishes', 'meat', 'pizza', 'pizza/taco-6.png'),
-(7, 'carnitas tacos', '4.5', '500', '14.00', '2.00', '03 pieces per serving', 'seasonal dishes online only', 'meat', 'pizza', 'pizza/taco-7.png'),
-(8, 'vegan tacos', '4.5', '100', '9.00', '2.00', '03 pieces per serving', 'new dishes', 'vegan', 'pizza', 'pizza/taco-8.png'),
-(9, 'wet burrito', '4.5', '600', '14.00', '0.00', '01 roll per serving', 'new dishes', 'meat', 'gyros', 'gyros/burrito-1.png'),
-(10, 'poncho burrito', '4.5', '999', '15.00', '3.00', '01 roll per serving', 'best seller', 'meat', 'gyros', 'gyros/burrito-2.png'),
-(11, 'bean & cheese burrito', '4.5', '999', '14.00', '0.00', '01 roll per serving', 'best seller', 'vegan', 'gyros', 'gyros/burrito-3.png'),
-(12, 'breakfast burrito', '4.5', '999', '12.00', '2.00', '01 roll per serving', 'new dishes', 'meat', 'gyros', 'gyros/burrito-4.png'),
-(13, 'california burrito', '4.5', '999', '14.00', '0.00', '01 roll per serving', 'best seller', 'meat', 'gyros', 'gyros/burrito-5.png'),
-(14, 'chimichanga', '4', '400', '12.00', '2.00', '01 roll per serving', 'seasonal dishes', 'meat', 'gyros', 'gyros/burrito-6.png'),
-(15, 'nacho tots', '4', '699', '12.00', '2.00', '01 tray per serving', 'best seller', 'meat', 'hamburger', 'hamburger/nachos-1.png'),
-(16, 'root beer pork nachos', '4.5', '999', '12.00', '0.00', '01 tray per serving', 'best seller', 'meat', 'hamburger', 'hamburger/nachos-2.png'),
-(17, 'shrimp nachos', '4.5', '999', '17.00', '2.00', '01 tray per serving', 'best seller', 'meat', 'hamburger', 'hamburger/nachos-3.png'),
-(18, 'chicken nachos', '4.5', '999', '11.00', '0.00', '01 tray per serving', 'best seller', 'meat', 'hamburger', 'hamburger/nachos-4.png'),
-(19, 'only nachos', '4', '999', '7.00', '2.00', '01 tray per serving', 'normal', 'vegan', 'hamburger', 'hamburger/nachos-5.png'),
-(20, 'pico de gallo', '4.5', '999', '5.00', '2.00', '01 bowl per serving', 'best seller', 'vegan', 'hamburger', 'hamburger/salsa-1.png'),
-(21, 'salsa guille', '4', '699', '5.00', '2.00', '01 bowl per serving', 'best seller', 'vegan', 'hamburger', 'hamburger/salsa-2.png'),
-(22, 'tomatillo salsa', '4.5', '499', '5.00', '2.00', '01 bowl per serving', 'seasonal dishes', 'vegan', 'hamburger', 'hamburger/salsa-3.png'),
-(23, 'roasted tomato salsa', '4.5', '999', '5.00', '2.00', '01 bowl per serving', 'best seller', 'vegan', 'hamburger', 'hamburger/salsa-4.png'),
-(24, 'guacamole', '4.5', '699', '5.00', '2.00', '01 bowl per serving', 'best seller', 'vegan', 'hamburger', 'hamburger/salsa-5.png'),
-(25, 'corn salad', '3.5', '699', '5.00', '1.00', '01 bowl per serving', 'new dishes seasonal dishes', 'vegan', 'tortilla', 'tortilla/side-1.png'),
-(26, 'keto taquitos', '4.5', '999', '9.00', '0.00', '05 pieces per serving', 'best seller', 'meat', 'tortilla', 'tortilla/side-2.png'),
-(27, 'mexican rice', '4', '200', '5.00', '0.00', '01 bowl per serving', 'normal', 'vegan', 'tortilla', 'tortilla/side-3.png'),
-(28, 'cilantro lime rice', '4', '100', '5.00', '0.00', '01 bowl per serving', 'new dishes', 'vegan', 'tortilla', 'tortilla/side-4.png'),
-(29, 'chicken tortilla soup', '3.5', '299', '10.00', '2.00', '01 bowl per serving', 'new dishes', 'meat', 'tortilla', 'tortilla/side-5.png'),
-(30, 'Churros', '4.5', '999', '7.00', '0.00', '05 pieces per serving', 'best seller', 'vegan', 'desszert', 'desszert/dessert-1.png'),
-(31, 'Fried Ice Cream', '4.5', '999', '5.00', '1.00', '01 piece per serving', 'best seller', 'vegan', 'desszert', 'desszert/dessert-2.png'),
-(32, 'Dulce de Leche', '4.5', '50', '4.00', '0.00', '01 bowl per serving', 'new dishes', 'vegan', 'desszert', 'desszert/dessert-3.png'),
-(33, 'Sweet Corn Cake', '3', '599', '4.00', '1.00', '02 pieces per serving', 'seasonal dishes online only', 'vegan', 'desszert', 'desszert/dessert-4.png'),
-(34, 'Sopapillas', '4', '199', '4.00', '0.00', '10 pieces per serving', 'normal', 'vegan', 'desszert', 'desszert/dessert-5.png'),
-(35, 'Conchas', '4', '299', '5.00', '0.00', '10 pieces per serving', 'normal', 'vegan', 'desszert', 'desszert/dessert-6.png'),
-(36, 'Horchata', '4.5', '999', '4.00', '0.00', '01 glass per serving', 'normal', 'vegan', 'desszert', 'desszert/dessert-7.png'),
-(37, 'Margarita', '4.5', '999', '5.00', '0.00', '01 glass per serving', 'best seller', 'vegan', 'ital', 'ital/drink-1.png'),
-(38, 'Michelada', '4.5', '999', '5.00', '0.00', '01 glass per serving', 'best seller', 'vegan', 'ital', 'ital/drink-2.png'),
-(39, 'paloma', '4.5', '599', '5.00', '0.00', '01 glass per serving', 'new dishes seasonal dishes', 'vegan', 'ital', 'ital/drink-3.png'),
-(40, 'Atole', '4', '999', '5.00', '1.00', '01 glass per serving', 'best seller', 'vegan', 'ital', 'ital/drink-4.png'),
-(41, 'fruit detox', '3.5', '999', '3.00', '0.00', '01 glass per serving', 'seasonal dishes best seller', 'vegan', 'ital', 'ital/drink-5.png'),
-(42, 'Coca cola', '4.5', '9999', '3.00', '0.00', '01 glass per serving', 'best seller', 'vegan', 'ital', 'ital/drink-6.png');
+(1, 'Margaréta', '4.5', '999', '2400', '0.00', 'paradicsomos alap, sajt, paradicsom karika (32cm)', 'best seller', 'meat', 'pizza', 'pizza/margareta.png'),
+(2, 'Kukoricás', '4.5', '999', '2800', '0.00', 'paradicsomos alap, sajt, kukorica (32cm)', 'best seller', 'meat', 'pizza', 'pizza/kukoricas.png'),
+(3, 'Gombás', '4.5', '500', '2500', '0.00', 'paradicsomos alap, sajt, gomba (32cm)', 'best seller', 'meat', 'pizza', 'pizza/gombas.png'),
+(4, 'Sonkás', '4.5', '999', '2700', '0.00', 'paradicsomos alap, sajt, sonka (32cm)', 'best seller', 'meat', 'pizza', 'pizza/sonkas.png'),
+(5, 'Szalámis', '4', '500', '2800', '0.00', 'paradicsomos alap, sajt, szalámi (32cm)', 'normal', 'meat', 'pizza', 'pizza/szalamis.png'),
+(6, 'Kolbászos', '4', '500', '2700', '0.00', 'paradicsomos alap, sajt, kolbász (32cm)', 'normal', 'meat', 'pizza', 'pizza/kolbaszos.png'),
+(7, 'Tarjás', '4.5', '500', '3000', '0.00', 'paradicsomos alap, sajt, tarja (32cm)', 'normal', 'meat', 'pizza', 'pizza/tarjas.png'),
+(8, 'Sonkás-kukoricás', '4.5', '100', '2700', '0.00', 'paradicsomos alap, sajt, sonka, kukorica (32cm)', 'normal', 'meat', 'pizza', 'pizza/sonkas-kukoricas.png'),
+(9, 'Sonkás-gombás', '4.5', '600', '2800', '0.00', 'paradicsomos alap, sajt, sonka, gomba (32cm)', 'normal', 'meat', 'pizza', 'pizza/sonkas-gombas.png'),
+(10, 'Gombás-kukoricás', '4.5', '999', '2500', '0.00', 'paradicsomos alap, sajt, gomba, kukorica (32cm)', 'best seller', 'meat', 'pizza', 'pizza/gombas-kukoricas.png'),
+(11, 'Songoku', '4.5', '999', '3000', '0.00', 'paradicsomos, alap, sajt, sonka, gomba, kukorica (32cm)', 'best seller', 'meat', 'pizza', 'pizza/songoku.png'),
+(12, 'Baconos', '4.5', '999', '2650', '0.00', 'paradicsomos alap, sajt, bacon (32cm)', 'new dishes', 'meat', 'pizza', 'pizza/baconos.png'),
+(13, 'Vegetáriánus', '4.5', '999', '2650', '0.00', 'paradicsomos alap, sajt, paradicsom karika, gomba, kukorica (32cm)', 'normal', 'vegan', 'pizza', 'pizza/vegetarianus.png'),
+(14, 'Tojásos', '4', '400', '2550', '0.00', 'paradicsomos alap, sajt, sonka, tojás (32cm)', 'seasonal dishes', 'meat', 'pizza', 'pizza/tojasos.png'),
+(15, 'Jalapennos', '4', '699', '2500', '0.00', 'paradicsomos alap, sajt, sonka, jalapenno (32cm)', 'normal', 'meat', 'pizza', 'pizza/jalapennos.png'),
+(16, 'Hawaii', '4.5', '999', '2650', '0.00', 'paradicsomos alap, sajt, sonka, ananász (32cm)', 'normal', 'meat', 'pizza', 'pizza/hawaii.png'),
+(17, 'Bunker Blast', '4.5', '999', '4000', '0.00', 'paradicsomos alap, sajt, sonka, tarja, kolbász, bacon, tojás (32cm)', 'best seller', 'meat', 'pizza', 'pizza/bunkerblast.png'),
+(18, 'San Marino', '4.5', '999', '2800', '0.00', 'paradicsomos alap, sajt, paradicsom karika, szalámi (32cm)', 'normal', 'meat', 'pizza', 'pizza/sanmarino.png'),
+(19, 'Falusi', '4', '999', '3200', '0.00', 'paradicsomos alap, sajt, lilahagyma, sonka, kolbász, bacon, tojás (32cm)', 'normal', 'meat', 'pizza', 'pizza/falusi.png'),
+(20, 'Parasztos', '4.5', '999', '3600', '0.00', 'paradicsomos alap, sajt, tarja, lilahagyma, bacon, kolbász, jalapenno (32cm)', 'best seller', 'meat', 'pizza', 'pizza/parasztos.png'),
+(21, 'Böllér', '4', '699', '3900', '0.00', 'paradicsomos alap, sajt, sonka, kolbász, bacon, szalámi (32cm)', 'best seller', 'meat', 'pizza', 'pizza/boller.png'),
+(22, 'Adria', '4.5', '499', '2800', '0.00', 'paradicsomos alap, sajt, tonhal, citrom karika (32cm)', 'seasonal dishes', 'meat', 'pizza', 'pizza/adria.png'),
+(23, 'Fetás', '4.5', '999', '2700', '0.00', 'paradicsomos alap, fetasajt, sonka, paradicsom karika (32cm)', 'best seller', 'meat', 'pizza', 'pizza/fetas.png'),
+(24, 'Négysajtos', '4.5', '699', '3300', '0.00', 'paradicsomos alap, trapista sajt, fetasajt, modzarella, cheddar sajt, sonka (32cm)', 'best seller', 'meat', 'pizza', 'pizza/negysajtos.png'),
+(25, 'Bad boy', '3.5', '699', '2900', '0.00', 'paradicsomos alap, sajt, szalámi, kukorica, lilahagyma (32cm)', 'new dishes', 'meat', 'pizza', 'pizza/badboy.png'),
+(26, 'Bad girl', '4.5', '999', '2900', '0.00', 'paradicsomos alap, sajt, grillezett csirkemell, olivabogyó (32cm)', 'best seller', 'meat', 'pizza', 'pizza/badgirl.png'),
+(27, 'Olivás', '4', '200', '2700', '0.00', 'paradicsomos alap, sajt, sonka, olivabogyó (32cm)', 'normal', 'meat', 'pizza', 'pizza/olivas.png'),
+(28, 'Hagymakarikás', '4', '100', '2800', '0.00', 'paradicsomos alap, sajt, sonka, hagymakarika (32cm)', 'new dishes', 'meat', 'pizza', 'pizza/hagymakarikas.png'),
+(29, 'Chicken', '3.5', '299', '2800', '0.00', 'tejfölös alap, csirkemell csíkok, brokkoli, sajt (32cm)', 'new dishes', 'meat', 'pizza', 'pizza/chicken.png'),
+(30, 'Brokkolis', '4.5', '999', '2600', '0.00', 'paradicsomos alap, sajt, sonka, brokkoli (32cm)', 'normal', 'meat', 'pizza', 'pizza/brokkolis.png'),
+(31, 'Gyros tál', '4.5', '999', '2900', '0.00', 'gyros hús, hasáb, tzatziki öntet, lilahagyma, paradicsom, saláta, pita', 'best seller', 'meat', 'gyros', 'gyros/gyrostal.png'),
+(32, 'Fetás gyros tál', '4.5', '500', '3100', '0.00', 'gyros hús, hasáb, tzatziki öntet, lilahagyma, paradicsom, saláta, pita, feta', 'normal', 'meat', 'gyros', 'gyros/fetasgyrostal.png'),
+(33, 'Sajtos gyros tál', '3', '599', '3300', '0.00', 'gyros hús, hasáb, tzatziki öntet, lilahagyma, paradicsom, saláta, pita, sajt', 'normal', 'meat', 'gyros', 'gyros/sajtosgyrostal.png'),
+(34, 'Fetás-olivás gyros tál', '4', '199', '3400', '0.00', 'gyros hús, hasáb, tzatziki öntet, lilahagyma, paradicsom, saláta, pita, feta, olivabogyó', 'normal', 'meat', 'gyros', 'gyros/fetas-olivasgyrostal.png'),
+(35, 'Jalapennos tál', '4', '299', '3000', '0.00', 'gyros hús, hasáb, tzatziki öntet, lilahagyma, paradicsom, saláta, pita, jalapenno', 'normal', 'meat', 'gyros', 'gyros/jalapennostal.png'),
+(36, 'Négysajtos tál', '4.5', '999', '3600', '0.00', 'gyros hús, hasáb, tzatziki öntet, lilahagyma, paradicsom, saláta, pita, trapista sajt, feta, modzarella, cheddar', 'normal', 'meat', 'gyros', 'gyros/negysajtosgyrostal.png'),
+(37, 'Vegetáriánus tál', '4.5', '999', '2600', '0.00', 'hasáb, tzatziki öntet, lilahagyma, paradicsom, saláta, pita, sajt', 'normal', 'vegan', 'gyros', 'gyros/vegetarianustal.png'),
+(38, 'Fitness tál', '4.5', '999', '2600', '0.00', 'gyros hús, tzatziki öntet, lilahagyma, paradicsom, saláta, pita', 'best seller', 'meat', 'gyros', 'gyros/fitnesstal.png'),
+(39, 'Dupla gyros tál', '4.5', '599', '3600', '0.00', 'dupla gyros hús, hasáb, tzatziki öntet, lilahagyma, paradicsom, saláta, pita', 'new dishes', 'meat', 'gyros', 'gyros/duplagyrostal.png'),
+(40, 'Olivás gyros tál', '4', '999', '3100', '0.00', 'gyros hús, hasáb, tzatziki öntet, lilahagyma, paradicsom, saláta, pita, olivabogyó', 'normal', 'meat', 'gyros', 'gyros/olivasgyrostal.png'),
+(41, 'Cheddar sajtos gyros tál', '3.5', '999', '3300', '0.00', 'gyros hús, hasáb, tzatziki öntet, lilahagyma, paradicsom, saláta, pita, cheddar sajt', 'best seller', 'meat', 'gyros', 'gyros/cheddarsajtosgyrostal.png'),
+(42, 'Gombás gyros tál', '4.5', '999', '3000', '0.00', 'gyros hús, hasáb, tzatziki öntet, lilahagyma, paradicsom, saláta, pita, gomba', 'normal', 'meat', 'gyros', 'gyros/gombasgyrostal.png'),
+(43, 'Kukoricás gyros tál', '4.5', '999', '3000', '0.00', 'gyros hús, hasáb, tzatziki öntet, lilahagyma, paradicsom, saláta, pita, kukorica saláta', 'normal', 'meat', 'gyros', 'gyros/kukoricasgyrostal.png');
 
 -- --------------------------------------------------------
 
@@ -227,7 +235,7 @@ ALTER TABLE `booktable`
 -- AUTO_INCREMENT a táblához `food`
 --
 ALTER TABLE `food`
-  MODIFY `food_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `food_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT a táblához `user`
