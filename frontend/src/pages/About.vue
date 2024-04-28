@@ -21,16 +21,16 @@
 
         <div class="row gallery">
             <div class="wrapper">
-                <img src="../assets/images/taco/taco-2.jpg" alt="">
-                <img src="../assets/images/taco/taco-4.jpg" alt="">
-                <img src="../assets/images/burrito/burrito-6.jpg" alt="">
-                <img src="../assets/images/burrito/burrito-2.jpg" alt="">
-                <img src="../assets/images/burrito/burrito-3.jpg" alt="">
-                <img src="../assets/images/nachos/nachos-1.jpg" alt="">
-                <img src="../assets/images/nachos/nachos-2.jpg" alt="">
-                <img src="../assets/images/nachos/nachos-3.jpg" alt="">
-                <img src="../assets/images/dessert/dessert-2.jpg" alt="">
-                <img src="../assets/images/dessert/dessert-6.jpg" alt="">
+                <img src="../assets/images/pizza/taco-2.jpg" alt="">
+                <img src="../assets/images/pizza/taco-4.jpg" alt="">
+                <img src="../assets/images/gyros/burrito-6.jpg" alt="">
+                <img src="../assets/images/gyros/burrito-2.jpg" alt="">
+                <img src="../assets/images/gyros/burrito-3.jpg" alt="">
+                <img src="../assets/images/hamburger/nachos-1.jpg" alt="">
+                <img src="../assets/images/hamburger/nachos-2.jpg" alt="">
+                <img src="../assets/images/hamburger/nachos-3.jpg" alt="">
+                <img src="../assets/images/desszert/dessert-2.jpg" alt="">
+                <img src="../assets/images/desszert/dessert-6.jpg" alt="">
             </div>
         </div>
     </section>

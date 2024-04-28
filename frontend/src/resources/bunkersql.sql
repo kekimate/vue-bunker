@@ -1,113 +1,241 @@
--- database name: "bunkersql"
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Gép: 127.0.0.1
+-- Létrehozás ideje: 2024. Ápr 28. 14:50
+-- Kiszolgáló verziója: 10.4.32-MariaDB
+-- PHP verzió: 8.2.12
 
-CREATE TABLE food( 
-    food_id INT(11) PRIMARY KEY AUTO_INCREMENT, 
-    food_name VARCHAR(255), 
-    food_star VARCHAR(255),
-    food_vote VARCHAR(255),
-    food_price VARCHAR(255),
-    food_discount VARCHAR(255),
-    food_desc VARCHAR(255),
-    food_status VARCHAR(255),
-    food_type VARCHAR(255),
-    food_category VARCHAR(255),
-    food_src VARCHAR(255)
-) ENGINE=INNODB;
-
-INSERT INTO food (food_name, food_star, food_vote, food_price, food_discount, food_desc, food_status, food_type, food_category, food_src)
-VALUES("carne asada tacos","4.5", "999", "12.00", "0.00", "03 pieces per serving", "best seller", "meat", "taco", "taco/taco-1.png"),
-("shrimp tacos","4.5", "999", "15.00", "3.00", "03 pieces per serving", "best seller", "meat", "taco", "taco/taco-2.png"),
-("barbacoa tacos","4.5","500","12.00","0.00","03 pieces per serving","best seller","meat","taco","taco/taco-3.png"),
-("tacos al pastor","4.5","999","13.00","2.00","03 pieces per serving","best seller","meat","taco","taco/taco-4.png"),
-("tinga tacos","4","500","11.00","0.00","03 pieces per serving","normal","meat","taco","taco/taco-5.png"),
-("campechanos tacos","4","500","11.00","1.00","03 pieces per serving","new dishes","meat","taco","taco/taco-6.png"),
-("carnitas tacos","4.5","500","14.00","2.00","03 pieces per serving","seasonal dishes online only","meat","taco","taco/taco-7.png"),
-("vegan tacos","4.5","100","9.00","2.00","03 pieces per serving","new dishes","vegan","taco","taco/taco-8.png"),
-("wet burrito","4.5","600","14.00","0.00","01 roll per serving","new dishes","meat","burrito","burrito/burrito-1.png"),
-("poncho burrito","4.5","999","15.00","3.00","01 roll per serving","best seller","meat","burrito","burrito/burrito-2.png"),
-("bean & cheese burrito","4.5","999","14.00","0.00","01 roll per serving","best seller","vegan","burrito","burrito/burrito-3.png"),
-("breakfast burrito","4.5","999","12.00","2.00","01 roll per serving","new dishes","meat","burrito","burrito/burrito-4.png"),
-("california burrito","4.5","999","14.00","0.00","01 roll per serving","best seller","meat","burrito","burrito/burrito-5.png"),
-("chimichanga","4","400","12.00","2.00","01 roll per serving","seasonal dishes","meat","burrito","burrito/burrito-6.png"),
-("nacho tots","4","699","12.00","2.00","01 tray per serving","best seller","meat","nachos","nachos/nachos-1.png"),
-("root beer pork nachos","4.5","999","12.00","0.00","01 tray per serving","best seller","meat","nachos","nachos/nachos-2.png"),
-("shrimp nachos","4.5","999","17.00","2.00","01 tray per serving","best seller","meat","nachos","nachos/nachos-3.png"),
-("chicken nachos","4.5","999","11.00","0.00","01 tray per serving","best seller","meat","nachos","nachos/nachos-4.png"),
-("only nachos","4","999","7.00","2.00","01 tray per serving","normal","vegan","nachos","nachos/nachos-5.png"),
-("pico de gallo","4.5","999","5.00","2.00","01 bowl per serving","best seller","vegan","nachos","nachos/salsa-1.png"),
-("salsa guille","4","699","5.00","2.00","01 bowl per serving","best seller","vegan","nachos","nachos/salsa-2.png"),
-("tomatillo salsa","4.5","499","5.00","2.00","01 bowl per serving","seasonal dishes","vegan","nachos","nachos/salsa-3.png"),
-("roasted tomato salsa","4.5","999","5.00","2.00","01 bowl per serving","best seller","vegan","nachos","nachos/salsa-4.png"),
-("guacamole","4.5","699","5.00","2.00","01 bowl per serving","best seller","vegan","nachos","nachos/salsa-5.png"),
-("corn salad","3.5","699","5.00","1.00","01 bowl per serving","new dishes seasonal dishes","vegan","sides","side/side-1.png"),
-("keto taquitos","4.5","999","9.00","0.00","05 pieces per serving","best seller","meat","sides","side/side-2.png"),
-("mexican rice","4","200","5.00","0.00","01 bowl per serving","normal","vegan","sides","side/side-3.png"),
-("cilantro lime rice","4","100","5.00","0.00","01 bowl per serving","new dishes","vegan","sides","side/side-4.png"),
-("chicken tortilla soup","3.5","299","10.00","2.00","01 bowl per serving","new dishes","meat","sides","side/side-5.png"),
-("Churros","4.5","999","7.00","0.00","05 pieces per serving","best seller","vegan","dessert","dessert/dessert-1.png"),
-("Fried Ice Cream","4.5","999","5.00","1.00","01 piece per serving","best seller","vegan","dessert","dessert/dessert-2.png"),
-("Dulce de Leche","4.5","50","4.00","0.00","01 bowl per serving","new dishes","vegan","dessert","dessert/dessert-3.png"),
-("Sweet Corn Cake","3","599","4.00","1.00","02 pieces per serving","seasonal dishes online only","vegan","dessert","dessert/dessert-4.png"),
-("Sopapillas","4","199","4.00","0.00","10 pieces per serving","normal","vegan","dessert","dessert/dessert-5.png"),
-("Conchas","4","299","5.00","0.00","10 pieces per serving","normal","vegan","dessert","dessert/dessert-6.png"),
-("Horchata","4.5","999","4.00","0.00","01 glass per serving","normal","vegan","dessert","dessert/dessert-7.png"),
-("Margarita","4.5","999","5.00","0.00","01 glass per serving","best seller","vegan","drink","drink/drink-1.png"),
-("Michelada","4.5","999","5.00","0.00","01 glass per serving","best seller","vegan","drink","drink/drink-2.png"),
-("paloma","4.5","599","5.00","0.00","01 glass per serving","new dishes seasonal dishes","vegan","drink","drink/drink-3.png"),
-("Atole","4","999","5.00","1.00","01 glass per serving","best seller","vegan","drink","drink/drink-4.png"),
-("fruit detox","3.5","999","3.00","0.00","01 glass per serving","seasonal dishes best seller","vegan","drink","drink/drink-5.png"),
-("Coca cola","4.5","9999","3.00","0.00","01 glass per serving","best seller","vegan","drink","drink/drink-6.png"); 
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
 
 
-CREATE TABLE user( 
-    user_id INT(11) PRIMARY KEY AUTO_INCREMENT, 
-    user_name VARCHAR(255), 
-    user_email VARCHAR(255),
-    user_phone VARCHAR(255),
-    user_password VARCHAR(255),
-    user_birth VARCHAR(255),
-    user_gender VARCHAR(255)
-) ENGINE=INNODB;
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
+--
+-- Adatbázis: `bunkersql`
+--
 
-CREATE TABLE cart (
-  user_id INT,
-  food_id INT,
-  item_qty INT,
-  primary key (user_id, food_id)
-);
+-- --------------------------------------------------------
 
+--
+-- Tábla szerkezet ehhez a táblához `billdetails`
+--
 
-CREATE TABLE booktable( 
-    book_id INT(11) PRIMARY KEY AUTO_INCREMENT, 
-    book_name VARCHAR(255), 
-    book_phone VARCHAR(255),
-    book_people INT,
-    book_tables INT,
-    user_id INT,
-    book_when VARCHAR(255),
-    book_note TEXT
-) ENGINE=INNODB;
+CREATE TABLE `billdetails` (
+  `bill_id` int(11) NOT NULL,
+  `food_id` int(11) NOT NULL,
+  `item_qty` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
+-- --------------------------------------------------------
 
-CREATE TABLE billdetails (
-  bill_id INT,
-  food_id INT,
-  item_qty INT,
-  primary key (bill_id, food_id)
-);
+--
+-- Tábla szerkezet ehhez a táblához `billstatus`
+--
 
-CREATE TABLE billstatus (
-  bill_id INT,
-  user_id INT,
-  bill_phone VARCHAR(255),
-  bill_address TEXT,
-  bill_when VARCHAR(255),
-  bill_method VARCHAR(255),
-  bill_discount INT,
-  bill_delivery INT,
-  bill_total INT,
-  bill_paid VARCHAR(255),
-  bill_status INT,
-  primary key (bill_id)
-);
+CREATE TABLE `billstatus` (
+  `bill_id` int(11) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `bill_phone` varchar(255) DEFAULT NULL,
+  `bill_address` text DEFAULT NULL,
+  `bill_when` varchar(255) DEFAULT NULL,
+  `bill_method` varchar(255) DEFAULT NULL,
+  `bill_discount` int(11) DEFAULT NULL,
+  `bill_delivery` int(11) DEFAULT NULL,
+  `bill_total` int(11) DEFAULT NULL,
+  `bill_paid` varchar(255) DEFAULT NULL,
+  `bill_status` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Tábla szerkezet ehhez a táblához `booktable`
+--
+
+CREATE TABLE `booktable` (
+  `book_id` int(11) NOT NULL,
+  `book_name` varchar(255) DEFAULT NULL,
+  `book_phone` varchar(255) DEFAULT NULL,
+  `book_people` int(11) DEFAULT NULL,
+  `book_tables` int(11) DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `book_when` varchar(255) DEFAULT NULL,
+  `book_note` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Tábla szerkezet ehhez a táblához `cart`
+--
+
+CREATE TABLE `cart` (
+  `user_id` int(11) NOT NULL,
+  `food_id` int(11) NOT NULL,
+  `item_qty` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Tábla szerkezet ehhez a táblához `food`
+--
+
+CREATE TABLE `food` (
+  `food_id` int(11) NOT NULL,
+  `food_name` varchar(255) DEFAULT NULL,
+  `food_star` varchar(255) DEFAULT NULL,
+  `food_vote` varchar(255) DEFAULT NULL,
+  `food_price` varchar(255) DEFAULT NULL,
+  `food_discount` varchar(255) DEFAULT NULL,
+  `food_desc` varchar(255) DEFAULT NULL,
+  `food_status` varchar(255) DEFAULT NULL,
+  `food_type` varchar(255) DEFAULT NULL,
+  `food_category` varchar(255) DEFAULT NULL,
+  `food_src` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
+
+--
+-- A tábla adatainak kiíratása `food`
+--
+
+INSERT INTO `food` (`food_id`, `food_name`, `food_star`, `food_vote`, `food_price`, `food_discount`, `food_desc`, `food_status`, `food_type`, `food_category`, `food_src`) VALUES
+(1, 'carne asada tacos', '4.5', '999', '12.00', '0.00', '03 pieces per serving', 'best seller', 'meat', 'pizza', 'pizza/taco-1.png'),
+(2, 'shrimp tacos', '4.5', '999', '15.00', '3.00', '03 pieces per serving', 'best seller', 'meat', 'pizza', 'pizza/taco-2.png'),
+(3, 'barbacoa tacos', '4.5', '500', '12.00', '0.00', '03 pieces per serving', 'best seller', 'meat', 'pizza', 'pizza/taco-3.png'),
+(4, 'tacos al pastor', '4.5', '999', '13.00', '2.00', '03 pieces per serving', 'best seller', 'meat', 'pizza', 'pizza/taco-4.png'),
+(5, 'tinga tacos', '4', '500', '11.00', '0.00', '03 pieces per serving', 'normal', 'meat', 'pizza', 'pizza/taco-5.png'),
+(6, 'campechanos tacos', '4', '500', '11.00', '1.00', '03 pieces per serving', 'new dishes', 'meat', 'pizza', 'pizza/taco-6.png'),
+(7, 'carnitas tacos', '4.5', '500', '14.00', '2.00', '03 pieces per serving', 'seasonal dishes online only', 'meat', 'pizza', 'pizza/taco-7.png'),
+(8, 'vegan tacos', '4.5', '100', '9.00', '2.00', '03 pieces per serving', 'new dishes', 'vegan', 'pizza', 'pizza/taco-8.png'),
+(9, 'wet burrito', '4.5', '600', '14.00', '0.00', '01 roll per serving', 'new dishes', 'meat', 'gyros', 'gyros/burrito-1.png'),
+(10, 'poncho burrito', '4.5', '999', '15.00', '3.00', '01 roll per serving', 'best seller', 'meat', 'gyros', 'gyros/burrito-2.png'),
+(11, 'bean & cheese burrito', '4.5', '999', '14.00', '0.00', '01 roll per serving', 'best seller', 'vegan', 'gyros', 'gyros/burrito-3.png'),
+(12, 'breakfast burrito', '4.5', '999', '12.00', '2.00', '01 roll per serving', 'new dishes', 'meat', 'gyros', 'gyros/burrito-4.png'),
+(13, 'california burrito', '4.5', '999', '14.00', '0.00', '01 roll per serving', 'best seller', 'meat', 'gyros', 'gyros/burrito-5.png'),
+(14, 'chimichanga', '4', '400', '12.00', '2.00', '01 roll per serving', 'seasonal dishes', 'meat', 'gyros', 'gyros/burrito-6.png'),
+(15, 'nacho tots', '4', '699', '12.00', '2.00', '01 tray per serving', 'best seller', 'meat', 'hamburger', 'hamburger/nachos-1.png'),
+(16, 'root beer pork nachos', '4.5', '999', '12.00', '0.00', '01 tray per serving', 'best seller', 'meat', 'hamburger', 'hamburger/nachos-2.png'),
+(17, 'shrimp nachos', '4.5', '999', '17.00', '2.00', '01 tray per serving', 'best seller', 'meat', 'hamburger', 'hamburger/nachos-3.png'),
+(18, 'chicken nachos', '4.5', '999', '11.00', '0.00', '01 tray per serving', 'best seller', 'meat', 'hamburger', 'hamburger/nachos-4.png'),
+(19, 'only nachos', '4', '999', '7.00', '2.00', '01 tray per serving', 'normal', 'vegan', 'hamburger', 'hamburger/nachos-5.png'),
+(20, 'pico de gallo', '4.5', '999', '5.00', '2.00', '01 bowl per serving', 'best seller', 'vegan', 'hamburger', 'hamburger/salsa-1.png'),
+(21, 'salsa guille', '4', '699', '5.00', '2.00', '01 bowl per serving', 'best seller', 'vegan', 'hamburger', 'hamburger/salsa-2.png'),
+(22, 'tomatillo salsa', '4.5', '499', '5.00', '2.00', '01 bowl per serving', 'seasonal dishes', 'vegan', 'hamburger', 'hamburger/salsa-3.png'),
+(23, 'roasted tomato salsa', '4.5', '999', '5.00', '2.00', '01 bowl per serving', 'best seller', 'vegan', 'hamburger', 'hamburger/salsa-4.png'),
+(24, 'guacamole', '4.5', '699', '5.00', '2.00', '01 bowl per serving', 'best seller', 'vegan', 'hamburger', 'hamburger/salsa-5.png'),
+(25, 'corn salad', '3.5', '699', '5.00', '1.00', '01 bowl per serving', 'new dishes seasonal dishes', 'vegan', 'tortilla', 'tortilla/side-1.png'),
+(26, 'keto taquitos', '4.5', '999', '9.00', '0.00', '05 pieces per serving', 'best seller', 'meat', 'tortilla', 'tortilla/side-2.png'),
+(27, 'mexican rice', '4', '200', '5.00', '0.00', '01 bowl per serving', 'normal', 'vegan', 'tortilla', 'tortilla/side-3.png'),
+(28, 'cilantro lime rice', '4', '100', '5.00', '0.00', '01 bowl per serving', 'new dishes', 'vegan', 'tortilla', 'tortilla/side-4.png'),
+(29, 'chicken tortilla soup', '3.5', '299', '10.00', '2.00', '01 bowl per serving', 'new dishes', 'meat', 'tortilla', 'tortilla/side-5.png'),
+(30, 'Churros', '4.5', '999', '7.00', '0.00', '05 pieces per serving', 'best seller', 'vegan', 'desszert', 'desszert/dessert-1.png'),
+(31, 'Fried Ice Cream', '4.5', '999', '5.00', '1.00', '01 piece per serving', 'best seller', 'vegan', 'desszert', 'desszert/dessert-2.png'),
+(32, 'Dulce de Leche', '4.5', '50', '4.00', '0.00', '01 bowl per serving', 'new dishes', 'vegan', 'desszert', 'desszert/dessert-3.png'),
+(33, 'Sweet Corn Cake', '3', '599', '4.00', '1.00', '02 pieces per serving', 'seasonal dishes online only', 'vegan', 'desszert', 'desszert/dessert-4.png'),
+(34, 'Sopapillas', '4', '199', '4.00', '0.00', '10 pieces per serving', 'normal', 'vegan', 'desszert', 'desszert/dessert-5.png'),
+(35, 'Conchas', '4', '299', '5.00', '0.00', '10 pieces per serving', 'normal', 'vegan', 'desszert', 'desszert/dessert-6.png'),
+(36, 'Horchata', '4.5', '999', '4.00', '0.00', '01 glass per serving', 'normal', 'vegan', 'desszert', 'desszert/dessert-7.png'),
+(37, 'Margarita', '4.5', '999', '5.00', '0.00', '01 glass per serving', 'best seller', 'vegan', 'ital', 'ital/drink-1.png'),
+(38, 'Michelada', '4.5', '999', '5.00', '0.00', '01 glass per serving', 'best seller', 'vegan', 'ital', 'ital/drink-2.png'),
+(39, 'paloma', '4.5', '599', '5.00', '0.00', '01 glass per serving', 'new dishes seasonal dishes', 'vegan', 'ital', 'ital/drink-3.png'),
+(40, 'Atole', '4', '999', '5.00', '1.00', '01 glass per serving', 'best seller', 'vegan', 'ital', 'ital/drink-4.png'),
+(41, 'fruit detox', '3.5', '999', '3.00', '0.00', '01 glass per serving', 'seasonal dishes best seller', 'vegan', 'ital', 'ital/drink-5.png'),
+(42, 'Coca cola', '4.5', '9999', '3.00', '0.00', '01 glass per serving', 'best seller', 'vegan', 'ital', 'ital/drink-6.png');
+
+-- --------------------------------------------------------
+
+--
+-- Tábla szerkezet ehhez a táblához `user`
+--
+
+CREATE TABLE `user` (
+  `user_id` int(11) NOT NULL,
+  `user_name` varchar(255) DEFAULT NULL,
+  `user_email` varchar(255) DEFAULT NULL,
+  `user_phone` varchar(255) DEFAULT NULL,
+  `user_password` varchar(255) DEFAULT NULL,
+  `user_birth` varchar(255) DEFAULT NULL,
+  `user_gender` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
+
+--
+-- A tábla adatainak kiíratása `user`
+--
+
+INSERT INTO `user` (`user_id`, `user_name`, `user_email`, `user_phone`, `user_password`, `user_birth`, `user_gender`) VALUES
+(1, 'Keki Mate', 'kekimate@gmail.com', '+36209124515', 'Kekimate1*', '2003-04-13', 'male');
+
+--
+-- Indexek a kiírt táblákhoz
+--
+
+--
+-- A tábla indexei `billdetails`
+--
+ALTER TABLE `billdetails`
+  ADD PRIMARY KEY (`bill_id`,`food_id`);
+
+--
+-- A tábla indexei `billstatus`
+--
+ALTER TABLE `billstatus`
+  ADD PRIMARY KEY (`bill_id`);
+
+--
+-- A tábla indexei `booktable`
+--
+ALTER TABLE `booktable`
+  ADD PRIMARY KEY (`book_id`);
+
+--
+-- A tábla indexei `cart`
+--
+ALTER TABLE `cart`
+  ADD PRIMARY KEY (`user_id`,`food_id`);
+
+--
+-- A tábla indexei `food`
+--
+ALTER TABLE `food`
+  ADD PRIMARY KEY (`food_id`);
+
+--
+-- A tábla indexei `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`user_id`);
+
+--
+-- A kiírt táblák AUTO_INCREMENT értéke
+--
+
+--
+-- AUTO_INCREMENT a táblához `booktable`
+--
+ALTER TABLE `booktable`
+  MODIFY `book_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT a táblához `food`
+--
+ALTER TABLE `food`
+  MODIFY `food_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+
+--
+-- AUTO_INCREMENT a táblához `user`
+--
+ALTER TABLE `user`
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

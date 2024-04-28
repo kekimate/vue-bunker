@@ -141,20 +141,20 @@
             <div class="col-sm-8">
                 <div class="row">
                     <div class="menu-tabs">
-                        <input type="button" id="allFilterFoodBtn" name="allFilterFoodBtn" value="all"
+                        <input type="button" id="allFilterFoodBtn" name="allFilterFoodBtn" value="összes"
                             class="menu-tab-item" @click="filterFoodBtn($event)" />
-                        <input type="button" id="tacoFilterFoodBtn" name="tacoFilterFoodBtn" class="menu-tab-item"
-                            value="taco" @click="filterFoodBtn($event)" />
-                        <input type="button" id="burritoFilterFoodBtn" name="burritoFilterFoodBtn" class="menu-tab-item"
-                            value="burrito" @click="filterFoodBtn($event)" />
-                        <input type="button" id="nachosFilterFoodBtn" name="nachosFilterFoodBtn" class="menu-tab-item"
-                            value="nachos" @click="filterFoodBtn($event)" />
-                        <input type="button" id="sidesFilterFoodBtn" name="sidesFilterFoodBtn" class="menu-tab-item"
-                            value="sides" @click="filterFoodBtn($event)" />
-                        <input type="button" id="dessertFilterFoodBtn" name="dessertFilterFoodBtn" class="menu-tab-item"
-                            value="dessert" @click="filterFoodBtn($event)" />
-                        <input type="button" id="drinkFilterFoodBtn" name="drinkFilterFoodBtn" class="menu-tab-item"
-                            value="drink" @click="filterFoodBtn($event)" />
+                        <input type="button" id="pizzaFilterFoodBtn" name="pizzaFilterFoodBtn" class="menu-tab-item"
+                            value="pizza" @click="filterFoodBtn($event)" />
+                        <input type="button" id="gyrosFilterFoodBtn" name="gyrosFilterFoodBtn" class="menu-tab-item"
+                            value="gyros" @click="filterFoodBtn($event)" />
+                        <input type="button" id="hamburgerFilterFoodBtn" name="hamburgerFilterFoodBtn" class="menu-tab-item"
+                            value="hamburger" @click="filterFoodBtn($event)" />
+                        <input type="button" id="tortillaFilterFoodBtn" name="tortillaFilterFoodBtn" class="menu-tab-item"
+                            value="tortilla" @click="filterFoodBtn($event)" />
+                        <input type="button" id="desszertFilterFoodBtn" name="desszertFilterFoodBtn" class="menu-tab-item"
+                            value="desszert" @click="filterFoodBtn($event)" />
+                        <input type="button" id="italFilterFoodBtn" name="italFilterFoodBtn" class="menu-tab-item"
+                            value="ital" @click="filterFoodBtn($event)" />
                     </div>
                 </div>
 
@@ -246,7 +246,7 @@ export default {
 
         filterFoods: function () {
             return this.allFoods.filter((f) => f.food_name.toLowerCase().match(this.foodObj.name.toLowerCase()) &&
-                (f.food_category.match(this.foodObj.category) || this.foodObj.category == "all" || this.foodObj.category == "") &&
+                (f.food_category.match(this.foodObj.category) || this.foodObj.category == "összes" || this.foodObj.category == "") &&
                 (this.evaluatePrice(f, this.foodObj.price)) &&
                 f.food_type.toLowerCase().match(this.foodObj.type.toLowerCase()) &&
                 (this.evaluateStatus(f, this.foodObj.status)));
