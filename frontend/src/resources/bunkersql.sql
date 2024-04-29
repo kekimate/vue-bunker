@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2024. Ápr 28. 22:12
--- Kiszolgáló verziója: 10.4.32-MariaDB
--- PHP verzió: 8.2.12
+-- Létrehozás ideje: 2024. Ápr 29. 13:20
+-- Kiszolgáló verziója: 10.4.28-MariaDB
+-- PHP verzió: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -156,7 +156,14 @@ INSERT INTO `food` (`food_id`, `food_name`, `food_star`, `food_vote`, `food_pric
 (40, 'Olivás gyros tál', '4', '999', '3100', '0.00', 'gyros hús, hasáb, tzatziki öntet, lilahagyma, paradicsom, saláta, pita, olivabogyó', 'normal', 'meat', 'gyros', 'gyros/olivasgyrostal.png'),
 (41, 'Cheddar sajtos gyros tál', '3.5', '999', '3300', '0.00', 'gyros hús, hasáb, tzatziki öntet, lilahagyma, paradicsom, saláta, pita, cheddar sajt', 'best seller', 'meat', 'gyros', 'gyros/cheddarsajtosgyrostal.png'),
 (42, 'Gombás gyros tál', '4.5', '999', '3000', '0.00', 'gyros hús, hasáb, tzatziki öntet, lilahagyma, paradicsom, saláta, pita, gomba', 'normal', 'meat', 'gyros', 'gyros/gombasgyrostal.png'),
-(43, 'Kukoricás gyros tál', '4.5', '999', '3000', '0.00', 'gyros hús, hasáb, tzatziki öntet, lilahagyma, paradicsom, saláta, pita, kukorica saláta', 'normal', 'meat', 'gyros', 'gyros/kukoricasgyrostal.png');
+(43, 'Kukoricás gyros tál', '4.5', '999', '3000', '0.00', 'gyros hús, hasáb, tzatziki öntet, lilahagyma, paradicsom, saláta, pita, kukorica saláta', 'normal', 'meat', 'gyros', 'gyros/kukoricasgyrostal.png'),
+(44, 'Classic hamburger', '4.5', '999', '2300', '0.00', 'buci, húspogácsa, koktélszósz, saláta, paradicsom, uborka, lila hagyma', 'normal', 'meat', 'hamburger', 'hamburger/classichamburger.png'),
+(45, 'Csirkés hamburger', '4.5', '999', '2500', '0.00', 'buci, húspogácsa, koktélszósz, saláta, paradicsom, uborka, lila hagyma, bacon', 'normal', 'meat', 'hamburger', 'hamburger/csirkeshamburger.png'),
+(46, 'Baconos hamburger', '4.5', '999', '2500', '0.00', 'buci, húspogácsa, koktélszósz, saláta, paradicsom, uborka, lila hagyma, sajt', 'normal', 'meat', 'hamburger', 'hamburger/baconoshamburger.png'),
+(47, 'Sajtos hamburger', '4.5', '999', '2500', '0.00', 'buci, húspogácsa, koktélszósz, saláta, paradicsom, uborka, lila hagyma, sajt', 'normal', 'meat', 'hamburger', 'hamburger/sajtoshamburger.png'),
+(48, 'Gombás hamburger', '4.5', '999', '2500', '0.00', 'buci, húspogácsa, koktélszósz, saláta, paradicsom, uborka, lila hagyma, gomba', 'normal', 'meat', 'hamburger', 'hamburger/gombashamburger.png'),
+(49, 'Kukoricás hamburger', '4.5', '999', '2500', '0.00', 'buci, húspogácsa, koktélszósz, saláta, paradicsom, uborka, lila hagyma, kukorica saláta', 'normal', 'meat', 'hamburger', 'hamburger/kukoricashamburger.png'),
+(50, 'Dupla hamburger', '4.5', '999', '2800', '0.00', 'buci, dupla húspogácsa, koktélszósz, saláta, paradicsom, uborka, lila hagyma', 'normal', 'meat', 'hamburger', 'hamburger/duplahamburger.png');
 
 -- --------------------------------------------------------
 
@@ -235,7 +242,7 @@ ALTER TABLE `booktable`
 -- AUTO_INCREMENT a táblához `food`
 --
 ALTER TABLE `food`
-  MODIFY `food_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `food_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT a táblához `user`
