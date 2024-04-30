@@ -75,37 +75,37 @@
                 <div class="row filter-section">
                     <ul class="filter-option">
                         <li>
-                            <input type="button" name="rPrice" id="rtfPrice" value="2,5" hidden
+                            <input type="button" name="rPrice" id="rtfPrice" value="100,600" hidden
                                 @click="filterPriceBtn($event)" />
-                            <label for="rtfPrice" class="d-flex justify-content-between">2 Ft - 5 Ft <button
+                            <label for="rtfPrice" class="d-flex justify-content-between">100 Ft - 600 Ft <button
                                     class="unselect-btn" @click="unselectPriceBtn($event)">X</button></label>
                         </li>
 
                         <li>
-                            <input type="button" name="rPrice" id="rftPrice" value="5,10" hidden
+                            <input type="button" name="rPrice" id="rftPrice" value="1000,2000" hidden
                                 @click="filterPriceBtn($event)" />
-                            <label for="rftPrice" class="d-flex justify-content-between">5 Ft - 10 Ft <button
+                            <label for="rftPrice" class="d-flex justify-content-between">1000 Ft - 2000 Ft <button
                                     class="unselect-btn" @click="unselectPriceBtn($event)">X</button></label>
                         </li>
 
                         <li>
-                            <input type="button" name="rPrice" id="rttPrice" value="10,12" hidden
+                            <input type="button" name="rPrice" id="rttPrice" value="2000,3000" hidden
                                 @click="filterPriceBtn($event)" />
-                            <label for="rttPrice" class="d-flex justify-content-between">10 Ft - 12 Ft <button
+                            <label for="rttPrice" class="d-flex justify-content-between">2000 Ft - 3000 Ft <button
                                     class="unselect-btn" @click="unselectPriceBtn($event)">X</button></label>
                         </li>
 
                         <li>
-                            <input type="button" name="rPrice" id="mtPrice" value="12" hidden
+                            <input type="button" name="rPrice" id="mtPrice" value="2000" hidden
                                 @click="filterPriceBtn($event)" />
-                            <label for="mtPrice" class="d-flex justify-content-between">{{ ">" }} 12 Ft <button
+                            <label for="mtPrice" class="d-flex justify-content-between">{{ ">" }} 2000 Ft <button
                                     class="unselect-btn" @click="unselectPriceBtn($event)">X</button></label>
                         </li>
 
                         <li>
-                            <input type="button" name="rPrice" id="ltPrice" value="2" hidden
+                            <input type="button" name="rPrice" id="ltPrice" value="3000" hidden
                                 @click="filterPriceBtn($event)" />
-                            <label for="ltPrice" class="d-flex justify-content-between">{{ "<" }} 2 Ft <button
+                            <label for="ltPrice" class="d-flex justify-content-between">{{ "<" }} 3000 Ft <button
                                     class="unselect-btn" @click="unselectPriceBtn($event)">X</button></label>
                         </li>
 
@@ -200,15 +200,14 @@
                         </div>
                     </div>
                 </div>
-                <div v-if="calculatePages > 1" class="action-row">
-
+                <div class="action-row">
                     <button v-if="pageNum != 0" @click="previous()" class="action-btn"> {{ "<" }} </button>
-                            <div v-for="(p, i) in calculatePages" :key="i" class="d-inline">
-                                <span v-if="i == pageNum" class="highlight" @click="set(i)">{{ i + 1 }}</span>
-                                <span v-else @click="set(i)">{{ i + 1 }}</span>
-                            </div>
-                            <button v-if="pageNum != calculatePages - 1" @click="next()" class="action-btn"> {{ ">" }}
-                            </button>
+                    <div v-for="page in calculatePages.totalPages" :key="page" class="d-inline">
+                        <span v-if="page >= calculatePages.startPage && page <= calculatePages.endPage" :class="{ highlight: page === pageNum }" 
+                            @click="set(page)">{{ page + 1 }}
+                        </span>
+                    </div>
+                    <button v-if="pageNum != calculatePages.totalPages - 1" @click="next()" class="action-btn"> {{ ">" }} </button>
                 </div>
             </div>
         </div>
@@ -254,14 +253,16 @@ export default {
         currentPageItems: function () {
             return this.filterFoods.slice(this.pageNum * this.perPage, this.pageNum * this.perPage + this.perPage);
         },
-        calculatePages: function () {
-            if (this.filterFoods.length % this.perPage != 0) {
-                return Math.floor((this.filterFoods.length) / this.perPage) + 1;
-            }
-            else {
-                return this.filterFoods.length / this.perPage;
-            }
-        }
+        calculatePages: function() {
+        let totalPages = Math.ceil(this.filterFoods.length / this.perPage);
+        let startPage = Math.max(0, this.pageNum - 2);
+        let endPage = Math.min(startPage + 4, totalPages - 1);
+        startPage = Math.max(0, endPage - 4);
+
+        return { totalPages, startPage, endPage
+    };
+}
+
     },
     methods: {
         set(val) {
@@ -342,28 +343,28 @@ export default {
         evaluatePrice: function (food, priceRange) {
             this.pageNum = 0;
             var cal = parseFloat(food.food_price) - parseFloat(food.food_discount);
-            if (priceRange == "2,5") {
-                if (2 <= cal && cal <= 5) {
+            if (priceRange == "100,600") {
+                if (100 <= cal && cal <= 600) {
                     return food;
                 }
             }
-            else if (priceRange == "5,10") {
-                if (5 <= cal && cal <= 10) {
+            else if (priceRange == "1000,2000") {
+                if (1000 <= cal && cal <= 2000) {
                     return food;
                 }
             }
-            else if (priceRange == "10,12") {
-                if (10 <= cal && cal <= 12) {
+            else if (priceRange == "2000,3000") {
+                if (2000 <= cal && cal <= 3000) {
                     return food;
                 }
             }
-            else if (priceRange == "2") {
-                if (cal <= 2) {
+            else if (priceRange == "2000") {
+                if (cal <= 1000) {
                     return food;
                 }
             }
-            else if (priceRange == "12") {
-                if (cal >= 12) {
+            else if (priceRange == "3000") {
+                if (cal >= 3000) {
                     return food;
                 }
             }
