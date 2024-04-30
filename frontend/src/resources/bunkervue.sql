@@ -255,8 +255,8 @@ INSERT INTO `food` (`food_id`, `food_name`, `food_star`, `food_vote`, `food_pric
 (139, 'Beefeater', '4.5', '999', '550 2cl', '0.00', '790 4cl', 'normal', 'vegan', 'ital', 'ital/beefeater.png'),
 (140, 'Hendricks', '4.5', '999', '800 2cl', '0.00', '1500 4cl', 'normal', 'vegan', 'ital', 'ital/hendricks.png'),
 (141, 'Baileys', '4.5', '999', '430 2cl', '0.00', '780 4cl', 'normal', 'vegan', 'ital', 'ital/baileys.png'),
-(142, 'Tatratea 72%', '4.5', '999', '400 2cl', '0.00', '1350 4cl', 'normal', 'vegan', 'ital', 'ital/tatratea72%.png'),
-(143, 'Tatratea 42%', '4.5', '999', '750 2cl', '0.00', '1050 4cl', 'normal', 'vegan', 'ital', 'ital/tatratea42%.png'),
+(142, 'Tatratea 72%', '4.5', '999', '400 2cl', '0.00', '1350 4cl', 'normal', 'vegan', 'ital', 'ital/tatratea72.png'),
+(143, 'Tatratea 42%', '4.5', '999', '750 2cl', '0.00', '1050 4cl', 'normal', 'vegan', 'ital', 'ital/tatratea42.png'),
 (144, 'Jägermeister', '4.5', '999', '550 2cl', '0.00', '880 4cl', 'normal', 'vegan', 'ital', 'ital/jagermeister.png'),
 (145, 'Jägermeister Scharf', '4.5', '999', '600 2cl', '0.00', '920 4cl', 'normal', 'vegan', 'ital', 'ital/jagermeisterscharf.png'),
 (146, 'St. Hubertus', '4.5', '999', '450 2cl', '0.00', '650 4cl', 'normal', 'vegan', 'ital', 'ital/sthubertus.png'),
@@ -272,7 +272,7 @@ INSERT INTO `food` (`food_id`, `food_name`, `food_star`, `food_vote`, `food_pric
 (156, 'Romanoff', '4.5', '999', '430 2cl', '0.00', '600 4cl', 'normal', 'vegan', 'ital', 'ital/romanoff.png'),
 (157, 'Absolut', '4.5', '999', '650 2cl', '0.00', '850 4cl', 'normal', 'vegan', 'ital', 'ital/absolut.png'),
 (158, 'Finlandia', '4.5', '999', '470 2cl', '0.00', '670 4cl', 'normal', 'vegan', 'ital', 'ital/finlandia.png'),
-(158, 'Royal', '4.5', '999', '450 2cl', '0.00', '650 4cl', 'normal', 'vegan', 'ital', 'ital/royal.png'),
+(159, 'Royal', '4.5', '999', '450 2cl', '0.00', '650 4cl', 'normal', 'vegan', 'ital', 'ital/royal.png');
 
 -- --------------------------------------------------------
 
@@ -295,7 +295,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `user_name`, `user_email`, `user_phone`, `user_password`, `user_birth`, `user_gender`) VALUES
-(1, 'Keki Mate', 'kekimate@gmail.com', '+36209124515', 'Kekimate1*', '2003-04-13', 'male');
+(1, 'Kéki Máté', 'kekimate@gmail.com', '+36209124515', 'Kekimate1*', '2003-04-13', 'male'),
+(2, 'Miskolczi Nándor', 'miskolczinandor@gmail.com', '+36209124515', 'Miskolczinandor1*', '2003-04-13', 'male'),
+(3, 'Agócs Ármin', 'agocsarmin@gmail.com', '+36209124515', 'Agocsarmin1*', '2003-04-13', 'male');
 
 --
 -- Indexek a kiírt táblákhoz
