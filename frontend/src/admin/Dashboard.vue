@@ -6,7 +6,6 @@
         </div>
 
         <div class="table-responsive">
-            <!-- PROJECT TABLE -->
             <table class="table colored-header datatable project-list">
                 <thead>
                     <tr>
