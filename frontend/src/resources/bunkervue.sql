@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2024. Máj 01. 11:54
+-- Létrehozás ideje: 2024. Máj 01. 12:04
 -- Kiszolgáló verziója: 10.4.32-MariaDB
 -- PHP verzió: 8.2.12
 
@@ -44,7 +44,8 @@ INSERT INTO `billdetails` (`bill_id`, `food_id`, `item_qty`) VALUES
 (2, 45, 1),
 (3, 28, 1),
 (3, 44, 1),
-(3, 94, 1);
+(3, 94, 1),
+(4, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -73,7 +74,8 @@ CREATE TABLE `billstatus` (
 INSERT INTO `billstatus` (`bill_id`, `user_id`, `bill_phone`, `bill_address`, `bill_when`, `bill_method`, `bill_discount`, `bill_delivery`, `bill_total`, `bill_paid`, `bill_status`) VALUES
 (1, 1, '+36209124515', 'Szeged, Retek utca 10', '2024-05-01T11:34', 'cash', 0, 15, 3715, 'false', 1),
 (2, 2, '+36209124515', 'Szeged, Fecske utca 4', '2024-05-01T11:39', 'cash', 0, 15, 5615, 'false', 1),
-(3, 3, '+36209124515', 'Szeged, Rigó utca 12', '2024-05-01T11:51', 'cash', 0, 15, 5615, 'false', 1);
+(3, 3, '+36209124515', 'Szeged, Rigó utca 12', '2024-05-01T11:51', 'cash', 0, 15, 5615, 'false', 1),
+(4, 3, '+36209124515', 'Szeged, Hajó utca 2', '2024-05-01T12:03', 'card', 0, 15, 2815, 'true', 1);
 
 -- --------------------------------------------------------
 
@@ -120,7 +122,7 @@ INSERT INTO `cart` (`user_id`, `food_id`, `item_qty`) VALUES
 (1, 71, 1),
 (2, 4, 1),
 (2, 132, 1),
-(3, 2, 1);
+(3, 66, 1);
 
 -- --------------------------------------------------------
 

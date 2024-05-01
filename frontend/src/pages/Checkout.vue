@@ -232,7 +232,7 @@ export default {
                     this.errorObj.nameErr.push('Név bevitele kötelező');
                 }
                 else {
-                    if (!/^(?:[A-ZÁÉÍÓÖŐÚÜŰ][a-záéíóöőúüű]*)(?:[-\s][A-ZÁÉÍÓÖŐÚÜŰ][a-záéíóöőúüű]*)+(?:\s+[A-ZÁÉÍÓÖŐÚÜŰ][a-záéíóöőúüű]*)*$/.test(this.cardObj.name)) {
+                    if (!/^(?:[A-ZÁÉÍÓÖŐÚÜŰa-záéíóöőúüű][ -]?)+$/.test(this.cardObj.name)) {
                         this.errorObj.nameErr.push('A névben csak betűk lehetnek');
                     }
                 }
