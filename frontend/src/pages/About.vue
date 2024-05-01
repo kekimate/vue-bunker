@@ -8,29 +8,25 @@
             <div class="about-content">
                 <img src="../assets/images/zoli.jpg" alt="">
                 <div class="about-content-text">
-                    <p>Our restaurant QFood was founded by Quang (a 5 Michelin stars chef) in 2002 in Vietnam. After
-                        that, thanks to the support of our customers, our brand has been popularized globally in markets
-                        such as Australia, USA, Canada, UK, France, Germany, Belgium, Russia, China, Japan,
-                        Singapore, ... Mexican-style meals, the products that we deliver to customers are always the
-                        best quality products.</p>
-                    <p>Customers can eat at the restaurant to experience the Mexican atmosphere or can order food to be
-                        delivered to their homes.</p>
+                    <p>Üdvözöljük a Bunker Pub-ban, ahol nem csupán egy egyszerű étteremről van szó - hanem egy élményről, amely megidézi a jókedvet és az ízek világát egyaránt. Sárkány Zoltán álma volt, hogy 2024-ben megteremtse ezt a különleges helyet Szeged belvárosában, a Gogol utca 20. alatt. Az alapító szenvedélye az ízletes ételek és az minőségi italok iránt vezette őt, és ez tükröződik minden falatban és kortyban, amit a Bunker Pubban kínálunk.</p>
+                    <p>A hangulatunkat a sötét fából készült bútorok és a rejtélyes fények adják, ami egy igazi bunker érzetét kelti. Az étlapunkon megtalálhatóak a klasszikusok, mint a frissen sütött pizza, a gazdag ízekkel teli burrito, valamint az ínycsiklandó hamburgerek és szendvicsek. Italválasztékunkban pedig megtalálhatóak a legjobb minőségű szeszes italok, frissítők és üdítők, hogy mindenki megtalálja a kedvére valót.</p>
+                    <p>Nálunk mindenki megtalálhatja a számára legmegfelelőbb élményt, legyen szó egy baráti összejövetelről vagy egy bulizós éjszakáról. A Bunker Pub szeretettel várja Önöket, hogy részesei lehessenek az általunk nyújtott egyedülálló élménynek!</p>
                 </div>
             </div>
         </div>
 
         <div class="row gallery">
             <div class="wrapper">
-                <img src="../assets/images/pizza/taco-2.jpg" alt="">
-                <img src="../assets/images/pizza/taco-4.jpg" alt="">
-                <img src="../assets/images/gyros/burrito-6.jpg" alt="">
-                <img src="../assets/images/gyros/burrito-2.jpg" alt="">
-                <img src="../assets/images/gyros/burrito-3.jpg" alt="">
-                <img src="../assets/images/hamburger/nachos-1.jpg" alt="">
-                <img src="../assets/images/hamburger/nachos-2.jpg" alt="">
-                <img src="../assets/images/hamburger/nachos-3.jpg" alt="">
-                <img src="../assets/images/desszert/dessert-2.jpg" alt="">
-                <img src="../assets/images/desszert/dessert-6.jpg" alt="">
+                <img src="../assets/images/pizza-1.jpg" alt="">
+                <img src="../assets/images/pizza-2.jpg" alt="">
+                <img src="../assets/images/gyros-1.jpg" alt="">
+                <img src="../assets/images/gyros-2.jpg" alt="">
+                <img src="../assets/images/gyros-3.jpg" alt="">
+                <img src="../assets/images/hamburger-1.jpg" alt="">
+                <img src="../assets/images/hamburger-2.jpg" alt="">
+                <img src="../assets/images/hamburger-3.jpg" alt="">
+                <img src="../assets/images/dessert-1.jpg" alt="">
+                <img src="../assets/images/dessert-2.jpg" alt="">
             </div>
         </div>
     </section>

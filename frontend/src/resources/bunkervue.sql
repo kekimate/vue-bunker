@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2024. Ápr 29. 13:20
--- Kiszolgáló verziója: 10.4.28-MariaDB
--- PHP verzió: 8.2.4
+-- Létrehozás ideje: 2024. Máj 01. 11:54
+-- Kiszolgáló verziója: 10.4.32-MariaDB
+-- PHP verzió: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,6 +33,19 @@ CREATE TABLE `billdetails` (
   `item_qty` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
+--
+-- A tábla adatainak kiíratása `billdetails`
+--
+
+INSERT INTO `billdetails` (`bill_id`, `food_id`, `item_qty`) VALUES
+(1, 1, 1),
+(1, 81, 1),
+(2, 32, 1),
+(2, 45, 1),
+(3, 28, 1),
+(3, 44, 1),
+(3, 94, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -53,6 +66,15 @@ CREATE TABLE `billstatus` (
   `bill_status` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
+--
+-- A tábla adatainak kiíratása `billstatus`
+--
+
+INSERT INTO `billstatus` (`bill_id`, `user_id`, `bill_phone`, `bill_address`, `bill_when`, `bill_method`, `bill_discount`, `bill_delivery`, `bill_total`, `bill_paid`, `bill_status`) VALUES
+(1, 1, '+36209124515', 'Szeged, Retek utca 10', '2024-05-01T11:34', 'cash', 0, 15, 3715, 'false', 1),
+(2, 2, '+36209124515', 'Szeged, Fecske utca 4', '2024-05-01T11:39', 'cash', 0, 15, 5615, 'false', 1),
+(3, 3, '+36209124515', 'Szeged, Rigó utca 12', '2024-05-01T11:51', 'cash', 0, 15, 5615, 'false', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -69,6 +91,14 @@ CREATE TABLE `booktable` (
   `book_when` varchar(255) DEFAULT NULL,
   `book_note` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
+
+--
+-- A tábla adatainak kiíratása `booktable`
+--
+
+INSERT INTO `booktable` (`book_id`, `book_name`, `book_phone`, `book_people`, `book_tables`, `user_id`, `book_when`, `book_note`) VALUES
+(1, 'Kéki Máté', '36209124515', 2, 1, NULL, '2024-06-30T18:00', ''),
+(2, 'Miskolczi Nándor', '36209124515', 5, 2, NULL, '2024-06-22T19:30', '');
 
 -- --------------------------------------------------------
 
@@ -87,7 +117,10 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`user_id`, `food_id`, `item_qty`) VALUES
-(1, 1, 1);
+(1, 71, 1),
+(2, 4, 1),
+(2, 132, 1),
+(3, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -200,7 +233,7 @@ INSERT INTO `food` (`food_id`, `food_name`, `food_star`, `food_vote`, `food_pric
 (84, 'KitKat palacsinta', '4.5', '999', '1800', '0.00', 'palacsinta, mogyorókrém, csoki öntet, KitKat (34cm)', 'normal', 'vegan', 'desszert', 'desszert/kitkat.png'),
 (85, 'M&Ms palacsinta', '4.5', '999', '1800', '0.00', 'palacsinta, mogyorókrém, csoki öntet, M&Ms (34cm)', 'normal', 'vegan', 'desszert', 'desszert/m&ms.png'),
 (86, 'Snickers palacsinta', '4.5', '999', '1800', '0.00', 'palacsinta, mogyorókrém, csoki öntet, Snickers (34cm)', 'normal', 'vegan', 'desszert', 'desszert/snickers.png'),
-(87, 'Twix palacsinta', '4.5', '999', '1800', '0.00', 'palacsinta, mogyorókrém, csoki öntet, Twix (34cm)', 'normal', 'vegan',  'desszert', 'desszert/twix.png'),
+(87, 'Twix palacsinta', '4.5', '999', '1800', '0.00', 'palacsinta, mogyorókrém, csoki öntet, Twix (34cm)', 'normal', 'vegan', 'desszert', 'desszert/twix.png'),
 (88, 'Twix palacsinta', '4.5', '999', '1800', '0.00', 'palacsinta, mogyorókrém, csoki öntet, Kinder Maxi King (34cm)', 'normal', 'vegan', 'desszert', 'desszert/kindermaxiking.png'),
 (89, 'Gesztenyepüré', '4.5', '999', '1500', '0.00', '', 'normal', 'vegan', 'desszert', 'desszert/gesztenyepure.png'),
 (90, 'Coca-Cola', '4.5', '999', '500', '0.00', '190/dl', 'best seller', 'vegan', 'ital', 'ital/coca-cola.png'),
@@ -347,19 +380,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT a táblához `booktable`
 --
 ALTER TABLE `booktable`
-  MODIFY `book_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `book_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT a táblához `food`
 --
 ALTER TABLE `food`
-  MODIFY `food_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `food_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=160;
 
 --
 -- AUTO_INCREMENT a táblához `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

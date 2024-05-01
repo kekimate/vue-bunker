@@ -10,15 +10,15 @@
             <table class="table colored-header datatable project-list">
                 <thead>
                     <tr>
-                        <th>Bill Id</th>
-                        <th>User Id</th>
-                        <th>Phone</th>
-                        <th>Address</th>
-                        <th>When</th>
-                        <th>Paid</th>
-                        <th>Total</th>
-                        <th>Status</th>
-                        <th>Action</th>
+                        <th>Számla Id</th>
+                        <th>Felhasználó Id</th>
+                        <th>Telefonszám</th>
+                        <th>Cím</th>
+                        <th>Időpont</th>
+                        <th>Fizetve</th>
+                        <th>Összeg</th>
+                        <th>Státusz</th>
+                        <th>Művelet</th>
                     </tr>
                 </thead>
                 <tbody>

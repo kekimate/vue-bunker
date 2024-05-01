@@ -83,9 +83,7 @@
             </div>
             <div class="content">
                 <span>Miért válasszon minket?</span>
-                <p>Food to customers is always guaranteed of the best quality. Our dishes are made by chef Quang (a 5
-                    Michelin stars chef), promising to bring explosive, delicate, impressive flavors. Our delivery
-                    service is very professional, customers can enjoy the same quality at the restaurant</p>
+                <p>Ha különleges élményre vágyik étel- és italkínálatunkban, válassza a Bunker Pub-ot! Varázslatos atmoszféránkban olyan ínycsiklandó ételeket kóstolhat, mint a frissen sütött pizza és a gazdag ízekkel teli burrito. Italaink között pedig megtalálhatóak a klasszikusok, mint a vodka sprite és a frissítő Coca-Cola. Legyen részese a Bunker élménynek, és garantáltan emlékezetes perceket él át nálunk!</p>
                 <router-link @click="scrollToTop()" to="/about" class="btn">Tovább</router-link>
 
                 <div class="icons-container">
